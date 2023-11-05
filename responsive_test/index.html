@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            width: 1000px;
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+        .progress {
+            width: 0;
+            height: 30px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: minmax(100px, max-content) repeat(auto-fit, 200px) 20%;
+        }
+
+        .sub {
+            background-color: red;
+            margin: 5px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="sub">1</div>
+        <div class="sub">2</div>
+        <div class="sub">3</div>
+        <div class="sub">4</div>
+        <div class="sub">5</div>
+        <div class="sub">6</div>
+        <div class="sub">7</div>
+        <div class="sub">8</div>
+        <div class="sub">8</div>
+        <div class="sub">8</div>
+        <div class="sub">8</div>
+        <div class="sub">8</div>
+        <div class="sub">8</div>
+        <div class="sub">8</div>
+        <div class="sub">8</div>
+        <div class="sub">8</div>
+        <div class="sub">8</div>
+        <div class="sub">8</div>
+        <div class="sub">8</div>
+        <div class="sub">8</div>
+        <!-- ... other sub divs ... -->
+    </div>
+
+    <div class="progress-container">
+        <div id="progress-bar" class="progress"></div>
+    </div>
+    <button id="increase-button" onclick="increaseWidth()">Increase Width</button>
+    <button id="decrease-button" onclick="decreaseWidth()">Decrease Width</button>
+
+    <script>
+        const body = document.body;
+        const progressBar = document.getElementById("progress-bar");
+
+        function increaseWidth() {
+            const currentWidth = parseFloat(getComputedStyle(body).width);
+
+            if (currentWidth < 1800) {
+                body.style.width = (currentWidth + 100) + "px";
+                progressBar.style.width = "0";
+            }
+        }
+
+        function decreaseWidth() {
+            const currentWidth = parseFloat(getComputedStyle(body).width);
+
+            if (currentWidth > 200) {
+                body.style.width = (currentWidth - 100) + "px";
+                progressBar.style.width = "0";
+            }
+        }
+    </script>
+</body>
+</html>
