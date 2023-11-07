@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style type="text/css" media="all">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css" media="all">
+
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-            width: 1000px;
-        }
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    width: 1000px;
+    margin: 0 auto; /* Center the body content horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the body content vertically */
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+/* ... other CSS styles ... */
+
+/* Position the range input fixed at the bottom */
+input[type="range"] {
+    position: fixed;
+    bottom: 210px; /* Adjust this value to control the vertical position */
+    left: 50%; /* Center the input horizontally */
+    transform: translateX(-50%); /* Center the input horizontally */
+    width: 80%; /* Adjust the width as needed */
+    z-index: 1; /* Ensure the input is on top of other content */
+}
         .progress-container {
             width: 100%;
             background-color: #ddd;
             border-radius: 5px;
         }
+
         .progress {
             width: 0;
             height: 30px;
@@ -24,19 +43,12 @@
             border-radius: 5px;
         }
 
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
 
         .main {
+          width: 60%;
             display: grid;
             grid-template-columns: minmax(100px, max-content) repeat(auto-fit, 200px) 20%;
+            margin:0 auto;
         }
 
         .sub {
@@ -44,60 +56,60 @@
             margin: 5px;
             height: 300px;
         }
-    </style>
+   
+  </style>
 </head>
 <body>
-    <div class="main">
-        <div class="sub">1</div>
-        <div class="sub">2</div>
-        <div class="sub">3</div>
-        <div class="sub">4</div>
-        <div class="sub">5</div>
-        <div class="sub">6</div>
-        <div class="sub">7</div>
-        <div class="sub">8</div>
-        <div class="sub">8</div>
-        <div class="sub">8</div>
-        <div class="sub">8</div>
-        <div class="sub">8</div>
-        <div class="sub">8</div>
-        <div class="sub">8</div>
-        <div class="sub">8</div>
-        <div class="sub">8</div>
-        <div class="sub">8</div>
-        <div class="sub">8</div>
-        <div class="sub">8</div>
-        <div class="sub">8</div>
-        <!-- ... other sub divs ... -->
-    </div>
-
-    <div class="progress-container">
+  <div class="main">
+    <div class="sub">1</div>
+    <div class="sub">2</div>
+    <div class="sub">3</div>
+    <div class="sub">4</div>
+    <div class="sub">5</div>
+    <div class="sub">6</div>
+    <div class="sub">7</div>
+    <div class="sub">8</div>
+    <div class="sub">8</div>
+    <div class="sub">8</div>
+    <div class="sub">8</div>
+    <div class="sub">8</div>
+    <div class="sub">8</div>
+    <div class="sub">8</div>
+    <div class="sub">8</div>
+    <div class="sub">8</div>
+    <div class="sub">8</div>
+    <div class="sub">8</div>
+    <div class="sub">8</div>
+    <div class="sub">8</div>
+  </div>
+  
+  
+  <div class="progress-container">
         <div id="progress-bar" class="progress"></div>
     </div>
-    <button id="increase-button" onclick="increaseWidth()">Increase Width</button>
-    <button id="decrease-button" onclick="decreaseWidth()">Decrease Width</button>
 
-    <script>
-        const body = document.body;
-        const progressBar = document.getElementById("progress-bar");
+    <input type="range" id="width-range" min="100" max="2000" value="1000"
+    oninput="updateWidth()">
+    
+    
+    
+  <script type="text/javascript" charset="utf-8">
+    const body = document.body;
+const progressBar = document.getElementById("progress-bar");
+const widthRange = document.getElementById("width-range");
 
-        function increaseWidth() {
-            const currentWidth = parseFloat(getComputedStyle(body).width);
+function updateWidth() {
+    const newWidth = widthRange.value;
+    body.style.width = newWidth + "px";
+    progressBar.style.width = "0";
+}
 
-            if (currentWidth < 1800) {
-                body.style.width = (currentWidth + 100) + "px";
-                progressBar.style.width = "0";
-            }
-        }
+widthRange.addEventListener("mousemove", (event) => {
+    if (event.buttons === 1) {
+        updateWidth();
+    }
+});
 
-        function decreaseWidth() {
-            const currentWidth = parseFloat(getComputedStyle(body).width);
-
-            if (currentWidth > 200) {
-                body.style.width = (currentWidth - 100) + "px";
-                progressBar.style.width = "0";
-            }
-        }
-    </script>
+  </script>
 </body>
 </html>
