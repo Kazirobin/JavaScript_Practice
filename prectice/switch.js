@@ -22,4 +22,5 @@ case 'friday':
 console.log('this is friday');
 default:
 console.log('not a day');
+
 }
