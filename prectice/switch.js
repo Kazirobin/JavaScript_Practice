@@ -1,4 +1,4 @@
-const day = 'saturda';
+const day = 'saturday';
 switch(day){
 case 'saturday':
 console.log('this is saturday');
