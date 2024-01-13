@@ -98,7 +98,7 @@ console.log(arr1.length);
 console.log(arr2.length);
 */
 /* 
->>get the index
+>>get by the index
 console.log(arr1.at(6)) ;
 console.log(arr1[6]) ;
 */
@@ -132,9 +132,9 @@ arr2.unshift(  {
   let arr4 = arr1.slice(0,-3);
   >>set start index and fixed how many i need show other removed
   let arr4 = arr1.splice(3, 3);
-  >>set start index and fixed how many i need to delete other showing
+  >>set start index and fixed how many i need to delete then other showing
  arr1.splice(3,3);
   */
 // console.log(arr1);
-arr1.splice(3, 3);
-console.log(arr1);
+let arr4 = arr1.splice(3, 3);
+console.log(arr4);
