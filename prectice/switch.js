@@ -1,7 +1,7 @@
 const day = 'saturday';
 switch(day){
 case 'saturday':
-console.log('this is saturday');
+console.log('this is saturday');8
 break
 case 'sunday':
 console.log('this is sunday');
