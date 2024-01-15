@@ -77,6 +77,6 @@ let arr2 = [
 let arr4 = arr2.slice(-3)
 // console.log(arr4);
 function func(item,index){
- return   index + ' '+ item.email2
+ return   index + ' '+ item.email
 }
 console.log(arr2.map(func));
