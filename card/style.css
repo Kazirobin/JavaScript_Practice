@@ -33,6 +33,7 @@ form{
     margin: 10px;
     min-width: 100px;
 }
+
 .card:after{
     position: absolute;
     top: 0;

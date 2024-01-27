@@ -34,6 +34,9 @@ function post(text_1, text_2, text_3) {
   card.appendChild(price);
   card.appendChild(add_btn);
   card_container_1.appendChild(card);
+
+
+
   add_btn.addEventListener('click', () => {
       add_btn.innerHTML = "delete"
     if(card_container_1.contains(card)){
@@ -47,3 +50,16 @@ function post(text_1, text_2, text_3) {
   });
   console.log(card);
 }
+const initialAddBtns = document.querySelectorAll('.add_btn');
+initialAddBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const card = btn.closest('.card');
+        if (card_container_1.contains(card)) {
+            card_container_2.appendChild(card);
+            card_container_1.removeChild(card);
+            btn.innerHTML = "Delete";
+        } else if (card_container_2.contains(card)) {
+            card_container_2.removeChild(card);
+        }
+    });
+});
