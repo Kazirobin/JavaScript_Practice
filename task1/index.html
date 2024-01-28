@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            text-align: center;
+        }
+        .img{
+            max-width: 300px;
+            max-height: 200px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💖💖I LOVE YOU💖💖</h1>
+
+        <div>
+
+            <button class="btn" onclick="setImg('./yes.png')">YES</button>
+            <button class="btn" onclick="setImg('./no.png')">NO</button>
+        </div>
+        <div class="img-box">
+            <img src="" alt="" class="img">
+        </div>
+    </div>
+    <script>
+        let img = document.querySelector('.img');
+        function setImg(setIt){
+            img.src = setIt;
+        };
+    </script>
+</body>
+</html>
