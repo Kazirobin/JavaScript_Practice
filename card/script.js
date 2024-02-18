@@ -2,8 +2,11 @@ const input1 = document.querySelector(".input1");
 const input2 = document.querySelector(".input2");
 const input3 = document.querySelector(".input3");
 const submit = document.querySelector(".submit");
+
 const card_container_1 = document.querySelector(".card_container_1");
 const card_container_2 = document.querySelector(".card_container_2");
+
+
 submit.addEventListener("click", (event) => {
     event.preventDefault();
   const text1 = input1.value;
@@ -14,6 +17,9 @@ submit.addEventListener("click", (event) => {
   input2.value = "";
   input3.value = "";
 });
+
+
+
 function post(text_1, text_2, text_3) {
   let card = document.createElement("div");
   card.className = "card";
