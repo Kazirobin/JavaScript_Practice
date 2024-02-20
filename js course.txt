@@ -1,0 +1,129 @@
+➡JavaScript Basics 
+
+➡Variables in JavaScript
+🔘var let const
+🔘Variable Declarations
+🔘Variable Naming Rules
+🔘Hoisting
+🔘Variable Scopes
+🔘Block Function Global
+➡Data Types
+typeof operator
+Primitive Types
+🔘string
+🔘number bigint
+🔘boolean null
+🔘undefined
+⭐Symbol 
+➡Type Casting
+🔘Type Conversion vs Coercion
+🔘Explicit Type Casting
+🔘Implicit Type Casting
+➡Object
+
+➡Data Structures
+➡Indexed Collections
+➡Typed Arrays
+➡Arrays
+
+➡Keyed Collections
+🔘Map
+🔘Weak Map
+🔘Set
+🔘Weak Set
+➡Structured Data
+➡JSON
+➡
+⭐Object Prototype
+⭐Prototypal Inheritance
+🔘Built-in Objects 
+➡Equality Comparison
+Value Comparison Operators
+🔘== === Object.is
+➡Equality Algorithms
+
+🔘isLooselyEqual
+🔘isStrictlyEqual
+🔘SameValueZero
+🔘SameValue
+➡Strings
+🔘
+➡Functions
+🔘Function Parameters
+-Default Params
+-Rest Params
+🔘Arrow Functions
+🔘IIFEs⭐
+🔘arguments object⭐
+🔘Scope & Function Stack⭐
+-Recursion⭐
+-Lexical Scoping⭐
+-Closures⭐
+🔘Built-in Functions
+➡Expressions and Operators
+🔘Assignment Operators
+🔘Comparison Operators
+🔘Arithmetic Operators
+🔘Bitwise Operators⭐
+🔘Logical Operators
+🔘BigInt Operators⭐
+🔘String Operators
+🔘Conditional Operators
+🔘Comma Operators
+🔘Unary Operators
+🔘Relational Operators⭐
+
+➡JavaScript Loop
+🔘for statement[for of]
+🔘while statement
+🔘do...while statement
+➡Conditional Statements 
+🔘If - Else Statements
+🔘Switch
+
+➡Exception Handling 
+🔘throw statement
+🔘try / catch / finally
+🔘Utilizing Error Objects
+➡Strict Mode
+🔘Function Borrowing
+🔘Using (this) keyword ____
+-in a method
+-in a function
+-using it alone
+-in event handlers
+-in arrow functions
+🔘Explicit Binding
+-call
+-apply
+-bind
+➡Regular Expression Syntax 
+🔘
+➡Numbers and Math 
+🔘
+➡Dealing with Dates in JavaScript 
+🔘
+➡JavaScript Events
+➡Asynchronous JavaScript
+🔘setTimeout
+🔘setInterval
+🔘Callbacks
+-Callback Hell
+🔘Promises
+-async / await
+➡Classes
+➡Iterators and Generators
+➡Modules in JavaScript
+🔘CommonJS
+🔘ECMAScript Modules
+➡Memory Management
+🔘Memory Lifecycle
+🔘Garbage Collection
+➡DOM Mode
+🔘
+➡Working with the User Browser 
+🔘
+➡Using Chrome Dev Tools
+🔘Debugging Issues
+🔘Debugging Memory Leaks
+🔘Debugging Performance
