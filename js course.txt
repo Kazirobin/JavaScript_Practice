@@ -127,3 +127,10 @@ Value Comparison Operators
 🔘Debugging Issues
 🔘Debugging Memory Leaks
 🔘Debugging Performance
+➡Es6 JavaScript
+Arrow Functions
+Map/Filter/Reduce
+Find/FindOne/FindIndex
+Import/Export and Modules
+Object and Array Destructuring
+Spread Operator

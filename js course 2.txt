@@ -1,0 +1,61 @@
+➔Week 1-2: Introduction to JavaScript Basics
+
+•Overview of JavaScript
+•Setting up Development Environment (IDE, Browser)
+•Variables in JavaScript (var, let, const)
+•Variable Declarations and Naming Rules
+•Hoisting and Variable Scopes
+
+➔Week 3-4: Data Types and Type Casting
+
+•Primitive Data Types (string, number, bigint, boolean, null, undefined, Symbol)
+•typeof operator
+•Type Conversion vs Coercion
+•Explicit and Implicit Type Casting
+
+➔Week 5-6: Object and Object Prototype
+
+•Object Creation and Properties
+•Object Methods and Prototypes
+•Prototypal Inheritance
+•Built-in Objects
+
+➔Week 7-8: Data Structures and Collections
+
+•Arrays: Creation, Accessing Elements, Methods
+•Indexed Collections (Typed Arrays)
+•Keyed Collections (Map, Weak Map, Set, Weak Set)
+•JSON (JavaScript Object Notation)
+
+➔Week 9-10: Functions and Expressions/Operators
+
+Function Declaration and Expressions
+Function Parameters (Default Params, Rest Params)
+Arrow Functions
+IIFEs and arguments object
+Scopes, Closures, and Function Stack
+Built-in Functions
+Expressions and Operators: Assignment, Comparison, Arithmetic, Bitwise, Logical, BigInt, String, Conditional, Unary, Relational
+➔Week 11-12: JavaScript Control Flow
+
+JavaScript Loop (for statement, while statement, do...while statement)
+Conditional Statements (If - Else, Switch)
+Week 13-14: Error Handling, Strict Mode, and Function Binding
+
+Exception Handling (throw statement, try/catch/finally)
+Utilizing Error Objects
+Strict Mode
+Function Borrowing
+Using (this) keyword in different contexts
+Week 15-16: Asynchronous JavaScript, DOM Manipulation, and Debugging
+
+Asynchronous JavaScript (setTimeout, setInterval, Promises, async/await)
+Classes, Iterators and Generators, Modules in JavaScript (CommonJS, ECMAScript Modules)
+Memory Management and Garbage Collection
+DOM Manipulation and Event Handling
+Debugging Techniques using Chrome Dev Tools
+Assessment:
+
+Weekly coding assignments and quizzes
+Midterm project (building a simple web application)
+Final project (building a more complex web application with asynchronous features)
