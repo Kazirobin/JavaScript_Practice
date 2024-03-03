@@ -10,7 +10,7 @@
 ➡Data Types
 typeof operator
 Primitive Types
-🔘string
+🔘string 
 🔘number bigint
 🔘boolean null
 🔘undefined
