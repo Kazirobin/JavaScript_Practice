@@ -13,7 +13,7 @@
 •Type Conversion vs Coercion
 •Explicit and Implicit Type Casting
 
-➔Week 5-6: Object and Object Prototype
+➔Week 5-6: Object and Object Prototype 
 
 •Object Creation and Properties
 •Object Methods and Prototypes
