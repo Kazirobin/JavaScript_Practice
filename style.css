@@ -1,3 +1,36 @@
+
+:root{
+    --font--1:"Jersey 15";
+}
+.box1 {
+    border: 3px red solid;
+  }
+  .box1 > .box {
+    height: 100px;
+    padding-inline: 10px;
+    display: inline-block;
+    background-color: red;
+  }
+  .box2 {
+    border: 3px solid pink;
+  }
+  .main {
+    height: 50px;
+    background-color: darkblue;
+  }
+  .main > a {
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 50px;
+    &:hover{
+      color: pink;
+    }
+  }
+  .box3 > a{
+    color: white;
+  }
 .box2{
     background-color: firebrick;
 }
@@ -10,4 +43,9 @@
     display: block;
     padding: 10px;
 
+}
+.box3 > h1{
+    font-family: var(--font--1);
+    color: black;
+    background-color: aqua;
 }
