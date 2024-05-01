@@ -1,90 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- link bootstrap -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
-    <!-- <style>
-        img{
-            width: 300px !important;
-        }
-    </style> -->
-</head>
-<body>
-  <div class="main">
-    <a href="./card/index.html">dom</a>
-    <a href="./task1/index.html">dom2</a>
-  </div>
-    <div class="container">
-
-
-    
-        <div class="row">
-          <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">Column </div>
-
-        </div>
-  
-
-
-        <div class="card-columns row row-gap-5 justify-content-evenly align-content-end"> 
-            
-            <div class="card col-sm-12 col-md-6 col-lg-4 col-xl-3" style="width: 18rem;">
-                <div class="card-body">
-                  <img src="./panjabis.png" class="card-img-top img-fluid" alt="...">
-                  <h5 class="card-title">responsive_test</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="./responsive_test/index.html" class="btn btn-primary">View Full Project</a>
-                </div>
-              </div>
-            <div class="card col-sm-12 col-md-6 col-lg-4 col-xl-3 " style="width: 18rem;">
-                <div class="card-body">
-                  <img src="" alt="" class="card-img-top img-fluid d-block">
-                  <h5 class="card-title">responsive_test</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="./responsive_test/index.html" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            <div class="card col-sm-12 col-md-6 col-lg-4 col-xl-3" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">responsive_test</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="./responsive_test/index.html" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            <div class="card col-sm-12 col-md-6 col-lg-4 col-xl-3" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">responsive_test</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="./responsive_test/index.html" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            <div class="card col-sm-12 col-md-6 col-lg-4 col-xl-3" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">responsive_test</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="./responsive_test/index.html" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            <div class="card col-sm-12 col-md-6 col-lg-4 col-xl-3" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">responsive_test</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="./responsive_test/index.html" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            <div class="card col-sm-12 col-md-6 col-lg-4 col-xl-3" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">responsive_test</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="./responsive_test/index.html" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-
-
-            
-          </div>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .box1 {
+        border: 3px red solid;
+      }
+      .box1 > .box {
+        height: 100px;
+        padding-inline: 10px;
+        display: inline-block;
+        background-color: red;
+      }
+      .box2{
+        border: 3px solid pink;
+      }
+      .main{
+        height: 50px;
+        background-color: darkblue;
+      }
+      .main > a{
+        color: white;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 25px;
+        line-height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <a href="./card/index.html">dom</a>
+      <a href="./task1/index.html">dom2</a>
     </div>
-</body>
+    <div class="main">
+      <div class="boxs">
+        <div class="box1">
+          <div class="box">hello
+            <h1>it is a practice site</h1>
+          </div>
+        </div>
+        <div class="box2">
+          <h1>this is box2</h1>
+        </div>
+        <div class="box3" style="background-color: blue;">
+          <h1>this is box 3 </h1>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

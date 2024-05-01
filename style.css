@@ -1,0 +1,13 @@
+.box2{
+    background-color: firebrick;
+}
+.box3{
+    background-color: brown;
+}
+.boxs{
+    background-color: chocolate;
+    height: 100%;
+    display: block;
+    padding: 10px;
+
+}
