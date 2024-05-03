@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>স্ক্রোল ইভেন্ট উদাহরণ</title>
+    <style>
+        .content {
+            height: 2000px; /* প্রদর্শনী উদাহরণের জন্য, একটি দীর্ঘ পৃষ্ঠা তৈরি করার জন্য */
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <!-- আপনার দীর্ঘ বিষয়বস্তু এখানে -->
+</div>
+
+<script>
+    // স্ক্রোল ইভেন্ট নিয়ে কাজ করার জন্য ফাংশন
+    function handleScroll() {
+        // ডকুমেন্টের বর্তমান স্ক্রোল অবস্থান পেতে
+        let scrollPosition = window.scrollY;
+
+        // স্ক্রোল অবস্থানকে কনসোলে লগ করা
+        console.log("স্ক্রোল অবস্থান: " + scrollPosition);
+    }
+
+    // স্ক্রোল ইভেন্ট লিস্টেনার যুক্ত করা হয়েছে window অবজেক্টে
+    window.addEventListener('scroll', handleScroll);
+</script>
+
+</body>
+</html>

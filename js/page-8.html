@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page-8</title>
+    <style>
+      .main {
+        border: 3px red solid;
+        position: relative;
+      }
+      .box {
+        height: 100px;
+        width: 200px;
+        background-color: purple;
+        margin: 30px auto;
+        cursor: pointer;
+        text-align: center;
+        color: white;
+        font-weight: 900;
+        font-size: 25px;
+        line-height: 100px;
+      }
+      .box2 {
+        background-color: orange;
+      }
+      .box2.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="top">Scrool</h1>
+
+    <div class="main">
+      <h1>main 1</h1>
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+      <div class="box box3"></div>
+    </div>
+    <div class="main">
+      <h1>main 2</h1>
+      <div class="box box4"></div>
+      <div class="box box5"></div>
+      <div class="box box6"></div>
+    </div>
+    <div class="main">
+      <h1>main 1</h1>
+      <div class="box box7"></div>
+      <div class="box box8"></div>
+      <div class="box box9"></div>
+    </div>
+    <div class="main">
+      <h1>main 3</h1>
+      <div class="box box10"></div>
+      <div class="box box11"></div>
+      <div class="box box12"></div>
+    </div>
+    <div class="main">
+      <h1>main 4</h1>
+      <div class="box box13"></div>
+      <div class="box box14"></div>
+      <div class="box box15"></div>
+    </div>
+    <div class="main">
+      <h1>main 5</h1>
+      <div class="box box16"></div>
+      <div class="box box17"></div>
+      <div class="box box18"></div>
+    </div>
+
+    <!-- <script>
+      let boxs = document.querySelectorAll(".box");
+      boxs[0].innerHTML = "box0";
+      boxs[1].innerHTML = "box1";
+      boxs[2].innerHTML = "box2";
+      boxs[3].innerHTML = "box3";
+      boxs[4].innerHTML = "box4";
+      boxs[5].innerHTML = "box5";
+      boxs[6].innerHTML = "box6";
+      boxs[7].innerHTML = "box7";
+      boxs[8].innerHTML = "box8";
+      boxs[9].innerHTML = "box9";
+      boxs[10].innerHTML = "box10";
+      boxs[11].innerHTML = "box11";
+      boxs[12].innerHTML = "box12";
+      boxs[13].innerHTML = "box13";
+      boxs[14].innerHTML = "box14";
+      boxs[15].innerHTML = "box15";
+      boxs[16].innerHTML = "box16";
+      boxs[17].innerHTML = "box17";
+
+      boxs[0].addEventListener("mouseover", () => {
+        boxs[0].innerHTML = "mouseover";
+      });
+      boxs[0].addEventListener("mouseout", () => {
+        boxs[0].innerHTML = "mouseout";
+      });
+
+    //   box 1 
+    boxs[1].addEventListener('',() => {
+        boxs[1].classList.add('active')
+    })
+</script>
+-->
+<script>
+    let boxs = document.querySelectorAll(".box");
+
+    // Setting innerHTML for all box elements
+    for (let i = 0; i < boxs.length; i++) {
+        boxs[i].innerHTML = "box" + i;
+    }
+
+    // Event listener for mouseover and mouseout on box0
+    boxs[0].addEventListener("mouseover", () => {
+        boxs[0].innerHTML = "mouseover";
+    });
+    boxs[0].addEventListener("mouseout", () => {
+        boxs[0].innerHTML = "mouseout";
+    });
+
+    // Event listener for adding 'active' class to box1 on click
+    boxs[1].addEventListener('click', () => {
+        boxs[1].classList.add('active');
+    });
+</script>
+  </body>
+</html>
