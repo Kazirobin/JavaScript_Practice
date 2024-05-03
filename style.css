@@ -2,6 +2,9 @@
 :root{
     --font--1:"Jersey 15";
 }
+html{
+  font-family: var(--font--1);
+}
 .box1 {
     border: 3px red solid;
   }
@@ -14,20 +17,30 @@
   .box2 {
     border: 3px solid pink;
   }
-  .main {
-    height: 50px;
+  .main:nth-child(1) {
+    height: 100px;
     background-color: darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .main > a {
-    color: white;
+    color: black;
+    background-color: chartreuse;
+    outline: 4px solid green;
+    border-radius: 50px;
     text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-inline: 10px;
     font-weight: 800;
-    font-size: 25px;
+    font-size: 50px;
     line-height: 50px;
-    &:hover{
-      color: pink;
-    }
-  }
+}
+
+.main > a:hover {
+    color: pink;
+}
   .box3 > a{
     color: white;
   }

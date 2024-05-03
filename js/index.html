@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+    <style type="text/css" media="all">
+      :root{
+        --color-1:#97DFFC;
+        --color-2:#858AE3;
+        --color-3:#613DC1;
+        --color-4:#4E148C;
+        --color-5:#2C0735;
+        --font:"Jaro", sans-serif;
+      }
+      .dactive {
+        display: none;
+      }
+      .active {
+        display: block;
+      }
+      .btn-boxs{
+        background-color:var(--color-1);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-inline: 20px;
+        border-radius: 10px;
+        padding-block: 10px;
+      }
+      .btn-box{
+        background-color:var(--color-2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+      }
+      .btn-box > h1{
+        text-transform: capitalize;
+        color: black;
+        letter-spacing: 3px;
+        font-family: var(--font);
+      }
+      .btn-box > button{
+        color: white;
+        padding: 10px;
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 800;
+        border-radius: 20px;
+        background-color:var(--color-3);
+        border-width: 10px;
+        border-color: var(--color-4);
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="btn-boxs">
+      <div class="btn-box">
+        <h1>array related</h1>
+        <button class="btn-1" onclick="btn(divs[0])" type="submit">page-1</button>
+      </div>
+      <div class="btn-box">
+        <h1>array related</h1>
+        <button class="btn-1" onclick="btn(divs[1])" type="submit">page-2</button>
+      </div>
+      <div class="btn-box">
+        <h1>array related</h1>
+        <button class="btn-1" onclick="btn(divs[2])" type="submit">page-3</button>
+      </div>
+      <div class="btn-box">
+        <h1>array related</h1>
+        <button class="btn-1" onclick="btn(divs[3])" type="submit">page-4</button>
+      </div>
+    </div>
+
+
+   
+
+
+
+
+
+    <!-- pages -->
+    <div class="dactive" id="page1"></div>
+    <div class="dactive" id="page2"></div>
+    <div class="dactive" id="page3"></div>
+    <div class="dactive" id="page4"></div>
+
+    <script>
+      var divs = document.querySelectorAll(".dactive");
+      function btn(value) {
+        value.classList.toggle("active");
+      }
+      // Function to fetch and insert HTML content from a file
+      function insertHTML(targetId, file) {
+        fetch(file)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById(targetId).innerHTML = data;
+          })
+          .catch((error) => console.error("Error fetching HTML:", error));
+      }
+
+      // Call the function for each HTML file
+      insertHTML("page1", "page-1.html");
+      insertHTML("page2", "page-2.html");
+      insertHTML("page3", "page-3.html");
+      insertHTML("page4", "page-4.html");
+    </script>
+  </body>
+</html>
