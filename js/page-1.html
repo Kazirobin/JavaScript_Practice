@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Page-1</title>
     <style type="text/css" media="all">
       s {
         text-decoration: line-through;
@@ -173,104 +173,209 @@
             // console.log(arr1);
             let arr4 = arr1.splice(3, 3);
             console.log(arr4);
-    
-</code></pre>
+
+
+
+
+            /*
+            let Name = new Array(5);
+            Name[0]="name1"
+            Name[1]="name2"
+            Name[2]="name3"
+            Name[3]="name4"
+            Name[4]="name5"
+            console.log(Name)//length=5
+            let Names =["name1","name2","name3","name4","name5"]
+            */
+            /*
+            Names.shift()// remove fisrt "name1"
+            Names.unshift("name0")// add into first
+            Names.pop()//remove last "name5"
+            Names.push("name6")// add into last
+            */
+            //Names.splice(2,0,"Names","Names2")//add into requred place
+            /*
+            console.log(Names)//length=5
+            let NameList =["name1","name2","name3","name4","name5","name6","name7","name8"]
+            //NameList.splice(3)//show start 3 index  
+            //NameList.splice(0,3)//remove start 3 index  
+            //NameList.splice(-3)//remove last 3 index  
+            //var NameList1 = NameList.splice(-3)//show last 3 index  
+            //NameList.splice(2,2)//first parametar is set the start index,
+            //secound parametar set how many index remove,
+            //var NameList2=NameList.splice(2,2)
+            //oposite
+            console.log(NameList)
+            var city1=["dhaka","dubai"]
+            var city2=["dilli","mumbai"]
+            var city= city1.concat(city2)
+            console.log(city)
+            */
+            /*
+
+
+
+
+let num =[10,20,30,40,50,60]
+let sum=0;
+console.log(num.length)
+for(let i=0;i<num.length;i++){
+  console.log(num[i]+" : "+i)
+  sum=sum+num[i];
+}
+console.log(sum)
+let nums=new Array(6);
+for(let i=0;i<nums.length;i++){
+  nums[i]= parseInt(prompt("enter"))
+}
+let  sum = 0;
+for(let i=0;i<nums.length;i++){
+  sum =sum+ nums[i];
+console.log(nums[i])
+}
+console.log(sum)
+*/
+let alfa=["Aa","Dd","Cc","Ff","Bb","Ee"]
+alfa.sort()
+alfa.reverse()
+console.log(alfa)
+let num =[3,33,10,5,8,40]
+num.sort(function(a,b){return a-b});
+num.reverse()
+console.log(num)
+
+
+
+var arr = [45,4,56,3,88,90,22,5]
+function highst(arr){
+  var max = arr[0];
+  for(var i=0;i< arr.length;i++){
+    if(max<arr[i]){
+      max=arr[i]
+    }
+  }
+      return max
+}
+var score=highst(arr);
+console.log(score)
+
+
+
+let arr
+=[["name1",45,true],["name2",23,true],["name3",40,true],["name4",15,false],["name5",49,false]]
+function score(arr){
+  
+    let max= arr[0][1];
+for(let x=0;x<arr.length;x++){
+  
+    if(max<arr[x][1]){
+      max=arr[x][1]
+      maxs=arr[x][0]
+  }
+}
+  return maxs
+}
+var maxx=score(arr)
+console.log(maxx)
+
+</code>
+</pre>
     <script type="text/javascript" charset="utf-8">
-       //only name
-       let arr1 = [
-                "George Castillo", //0
-                "Jose McDaniel", //1
-                "Ella Hayes", //2
-                "Myrtle Keller", //3
-                "Billy Cobb", //4
-                "Cecelia Cummings", //5
-                "Caroline Boone", //6
-                "Zachary Abbott", //7
-                "Derrick Cruz", //8
-                "Hannah Hunt", //9
-                "Jesse Richards", //10
-                "Bernice Parks", //11
-                "Thomas Tran", //12
-                "Martha Bell", //13
-                "Mitchell Gomez", //14
-            ];
-            //multiple object
-            let arr2 = [
-                {
-                    name: "Bess Briggs",
-                    birth: 2075,
-                    email: "vin@wi.lr",
-                    adult: true,
-                },
-                {
-                    name: "Loretta Coleman",
-                    birth: 2110,
-                    email: "tezetaco@row.mq",
-                    adult: true,
-                },
-                {
-                    name: "Georgia Simpson",
-                    birth: 2092,
-                    email: "ocija@azeegu.tz",
-                    adult: true,
-                },
-                {
-                    name: "Martha Ramos",
-                    birth: 2118,
-                    email: "hirir@caoreli.iq",
-                    adult: true,
-                },
-                {
-                    name: "Fred Bryant",
-                    birth: 2113,
-                    email: "gulodegu@loz.gs",
-                    adult: true,
-                },
-                {
-                    name: "Lottie Stevens",
-                    birth: 2082,
-                    email: "paf@huladci.ht",
-                    adult: true,
-                },
-                {
-                    name: "Elijah Cortes",
-                    birth: 2072,
-                    email: "vuim@carupro.pw",
-                    adult: true,
-                },
-                {
-                    name: "Mabel McDaniel",
-                    birth: 2024,
-                    email: "roviuh@luses.fr",
-                    adult: true,
-                },
-                {
-                    name: "Terry Daniel",
-                    birth: 2088,
-                    email: "ihfuvoci@amrul.gb",
-                    adult: true,
-                },
-                {
-                    name: "Violet Nunez",
-                    birth: 2084,
-                    email: "pe@bicciuj.tp",
-                    adult: false,
-                },
-                {
-                    name: "Hilda Crawford",
-                    birth: 2082,
-                    email: "faztab@lic.cm",
-                    adult: true,
-                },
-                {
-                    name: "Jesse Stanley",
-                    birth: 2043,
-                    email: "kufof@buver.sc",
-                    adult: true,
-                },
-            ];
-            
-            console.clear();
+      //only name
+      let arr1 = [
+        "George Castillo", //0
+        "Jose McDaniel", //1
+        "Ella Hayes", //2
+        "Myrtle Keller", //3
+        "Billy Cobb", //4
+        "Cecelia Cummings", //5
+        "Caroline Boone", //6
+        "Zachary Abbott", //7
+        "Derrick Cruz", //8
+        "Hannah Hunt", //9
+        "Jesse Richards", //10
+        "Bernice Parks", //11
+        "Thomas Tran", //12
+        "Martha Bell", //13
+        "Mitchell Gomez", //14
+      ];
+      //multiple object
+      let arr2 = [
+        {
+          name: "Bess Briggs",
+          birth: 2075,
+          email: "vin@wi.lr",
+          adult: true,
+        },
+        {
+          name: "Loretta Coleman",
+          birth: 2110,
+          email: "tezetaco@row.mq",
+          adult: true,
+        },
+        {
+          name: "Georgia Simpson",
+          birth: 2092,
+          email: "ocija@azeegu.tz",
+          adult: true,
+        },
+        {
+          name: "Martha Ramos",
+          birth: 2118,
+          email: "hirir@caoreli.iq",
+          adult: true,
+        },
+        {
+          name: "Fred Bryant",
+          birth: 2113,
+          email: "gulodegu@loz.gs",
+          adult: true,
+        },
+        {
+          name: "Lottie Stevens",
+          birth: 2082,
+          email: "paf@huladci.ht",
+          adult: true,
+        },
+        {
+          name: "Elijah Cortes",
+          birth: 2072,
+          email: "vuim@carupro.pw",
+          adult: true,
+        },
+        {
+          name: "Mabel McDaniel",
+          birth: 2024,
+          email: "roviuh@luses.fr",
+          adult: true,
+        },
+        {
+          name: "Terry Daniel",
+          birth: 2088,
+          email: "ihfuvoci@amrul.gb",
+          adult: true,
+        },
+        {
+          name: "Violet Nunez",
+          birth: 2084,
+          email: "pe@bicciuj.tp",
+          adult: false,
+        },
+        {
+          name: "Hilda Crawford",
+          birth: 2082,
+          email: "faztab@lic.cm",
+          adult: true,
+        },
+        {
+          name: "Jesse Stanley",
+          birth: 2043,
+          email: "kufof@buver.sc",
+          adult: true,
+        },
+      ];
+
+      console.clear();
     </script>
   </body>
 </html>

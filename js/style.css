@@ -1,0 +1,52 @@
+:root{
+    --color-1:#97DFFC;
+    --color-2:#858AE3;
+    --color-3:#613DC1;
+    --color-4:#4E148C;
+    --color-5:#2C0735;
+    --font:"Jaro", sans-serif;
+  }
+  .dactive {
+    display: none;
+  }
+  .active {
+    display: block;
+  }
+  .btn-boxs{
+    background-color:var(--color-1);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 20px;
+    border-radius: 10px;
+    padding-block: 10px;
+    height: 100%;
+  }
+  .btn-box{
+    background-color:var(--color-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+  }
+  .btn-box > h1{
+    text-transform: capitalize;
+    color: black;
+    letter-spacing: 3px;
+    font-family: var(--font);
+  }
+  .btn-box > button{
+    color: white;
+    padding: 10px;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 20px;
+    background-color:var(--color-3);
+    border-width: 10px;
+    border-color: var(--color-4);
+  }

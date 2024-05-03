@@ -4,9 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Page-4</title>
 </head>
 <body>
-  <h1>this is page 4</h1>
+  <h1>Function</h1>
+  <code>
+    <pre>
+      /*
+      function add(x,y){
+        var add = x+ y;
+        console.log("add : "+add);
+      }
+      function sub(x,y){
+        var sub = x- y;
+        console.log("sub : "+sub);
+      }
+      function multi(x,y){
+        var multi = x* y;
+        console.log("multi : "+multi);
+      }
+      function div(x,y){
+        var div = x/ y;
+        console.log("div : "+div);
+      }
+      add(25,5)
+      sub(25,5)
+      multi(25,5)
+      div(25,5)
+      */
+      //Imidiatly Invokable Function Exprasion
+      (function wish(msg){
+        console.log(msg)
+      })("hello");
+      //Function Regular Exprasion
+      let wish = function wish(msg){
+        console.log(msg)
+      }
+      wish("hi")
+      //Arrow Function
+      let wise = (msg)=>{console.log(msg)}
+      wise("wise")
+    </pre>
+  </code>
 </body>
 </html>
