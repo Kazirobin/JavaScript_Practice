@@ -216,67 +216,67 @@
 
 
 
-let num =[10,20,30,40,50,60]
-let sum=0;
-console.log(num.length)
-for(let i=0;i<num.length;i++){
-  console.log(num[i]+" : "+i)
-  sum=sum+num[i];
-}
-console.log(sum)
-let nums=new Array(6);
-for(let i=0;i<nums.length;i++){
-  nums[i]= parseInt(prompt("enter"))
-}
-let  sum = 0;
-for(let i=0;i<nums.length;i++){
-  sum =sum+ nums[i];
-console.log(nums[i])
-}
-console.log(sum)
-*/
-let alfa=["Aa","Dd","Cc","Ff","Bb","Ee"]
-alfa.sort()
-alfa.reverse()
-console.log(alfa)
-let num =[3,33,10,5,8,40]
-num.sort(function(a,b){return a-b});
-num.reverse()
-console.log(num)
-
-
-
-var arr = [45,4,56,3,88,90,22,5]
-function highst(arr){
-  var max = arr[0];
-  for(var i=0;i< arr.length;i++){
-    if(max<arr[i]){
-      max=arr[i]
-    }
-  }
-      return max
-}
-var score=highst(arr);
-console.log(score)
-
-
-
-let arr
-=[["name1",45,true],["name2",23,true],["name3",40,true],["name4",15,false],["name5",49,false]]
-function score(arr){
-  
-    let max= arr[0][1];
-for(let x=0;x<arr.length;x++){
-  
-    if(max<arr[x][1]){
-      max=arr[x][1]
-      maxs=arr[x][0]
-  }
-}
-  return maxs
-}
-var maxx=score(arr)
-console.log(maxx)
+              let num =[10,20,30,40,50,60]
+              let sum=0;
+              console.log(num.length)
+              for(let i=0;i<num.length;i++){
+                console.log(num[i]+" : "+i)
+                sum=sum+num[i];
+              }
+              console.log(sum)
+              let nums=new Array(6);
+              for(let i=0;i<nums.length;i++){
+                nums[i]= parseInt(prompt("enter"))
+              }
+              let  sum = 0;
+              for(let i=0;i<nums.length;i++){
+                sum =sum+ nums[i];
+              console.log(nums[i])
+              }
+              console.log(sum)
+              */
+              let alfa=["Aa","Dd","Cc","Ff","Bb","Ee"]
+              alfa.sort()
+              alfa.reverse()
+              console.log(alfa)
+              let num =[3,33,10,5,8,40]
+              num.sort(function(a,b){return a-b});
+              num.reverse()
+              console.log(num)
+              
+              
+              
+              var arr = [45,4,56,3,88,90,22,5]
+              function highst(arr){
+                var max = arr[0];
+                for(var i=0;i< arr.length;i++){
+                  if(max<arr[i]){
+                    max=arr[i]
+                  }
+                }
+                    return max
+              }
+              var score=highst(arr);
+              console.log(score)
+              
+              
+              
+              let arr
+              =[["name1",45,true],["name2",23,true],["name3",40,true],["name4",15,false],["name5",49,false]]
+              function score(arr){
+                
+                  let max= arr[0][1];
+              for(let x=0;x<arr.length;x++){
+                
+                  if(max<arr[x][1]){
+                    max=arr[x][1]
+                    maxs=arr[x][0]
+                }
+              }
+                return maxs
+              }
+              var maxx=score(arr)
+              console.log(maxx)
 
 </code>
 </pre>
