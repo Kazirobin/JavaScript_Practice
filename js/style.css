@@ -21,7 +21,6 @@
     margin-inline: 20px;
     border-radius: 10px;
     padding-block: 10px;
-    height: 100%;
   }
   .btn-box{
     background-color:var(--color-2);
@@ -38,15 +37,16 @@
     color: black;
     letter-spacing: 3px;
     font-family: var(--font);
+    font-size: 25px;
   }
   .btn-box > button{
     color: white;
-    padding: 10px;
+    padding: 5px;
     text-transform: capitalize;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 800;
     border-radius: 20px;
     background-color:var(--color-3);
-    border-width: 10px;
+    border-width: 5px;
     border-color: var(--color-4);
   }
