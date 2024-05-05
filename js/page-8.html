@@ -31,11 +31,23 @@
         z-index: 1;
         margin: auto;
       }
+      #test {
+        position: fixed;
+        top: 1px;
+        left: 10px;
+        background-color: aliceblue;
+        font-weight: 700;
+      }
     </style>
   </head>
   <body>
     <h1 id="top">8 Events</h1>
-    <h1><a href="./index.html" style="color: black;">🔙 back</a></h1>
+    <h1><a href="./index.html" style="color: black">🔙 back</a></h1>
+    <p id="height">height:</p>
+    <p id="width">width:</p>
+    <p id="test">test:</p>
+    <p id="test1">test1:</p>
+    <p id="test2">test2:</p>
 
     <div class="main">
       <h1>main 1</h1>
@@ -75,6 +87,18 @@
     </div>
 
     <script>
+      let height = document.getElementById("height");
+      let width = document.getElementById("width");
+      let test = document.getElementById("test");
+      let test1 = document.getElementById("test1");
+      let test2 = document.getElementById("test2");
+      var winHeight = window.outerHeight;
+      var winWidth = window.outerWidth;
+      var testIt = window.pageYOffset;
+      height.innerHTML = `height: ${winHeight}`;
+      width.innerHTML = `width: ${winWidth}`;
+      test.innerHTML = ` window.pageYOffset: ${testIt}`;
+
       let boxs = document.querySelectorAll(".box");
       boxs[0].innerHTML = "box0";
       boxs[0].addEventListener("mouseover", () => {
@@ -89,6 +113,7 @@
 
       // Get the offset position of the box2
       var sticky = box2.offsetTop;
+      console.log(sticky);
 
       // Add the active class to box2 when you reach its scroll position. Remove "active" when you leave the scroll position
       window.onscroll = function () {
@@ -108,11 +133,13 @@
         boxs[2].innerHTML = "clicked";
       });
       boxs[3].innerHTML = "clidbl";
-      boxs[3].addEventListener('dblclick',() => {
-          boxs[3].innerHTML = "dblclicked";
-
-      })
+      boxs[3].addEventListener("dblclick", () => {
+        boxs[3].innerHTML = "dblclicked";
+      });
       boxs[4].innerHTML = "box4";
+      box4 = boxs[4];
+      box4TopHeight = box4.offsetTop;
+      test1.innerHTML = `box4.offsetTop: ${box4TopHeight}`;
       boxs[5].innerHTML = "box5";
       boxs[6].innerHTML = "box6";
       boxs[7].innerHTML = "box7";
