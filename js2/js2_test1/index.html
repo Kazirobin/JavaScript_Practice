@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2</title>
+    <style>
+        #text{
+            border: 3px solid green;
+            background-color: purple;
+            color: white;
+            font-weight: 900;
+            height: 30px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="outputFull"></h1>
+    <h1 id="output"></h1>
+    <input type="text" name="" id="text">
+    <script>
+        const text = document.getElementById('text');
+        const output = document.getElementById('output');
+        const outputFull = document.getElementById('outputFull');
+        text.addEventListener('keyup', function(event) {
+            const keyCode = event.key || event.which;
+            // Display the last keycode in the input field
+            text.value = key;
+            // Display the full input text in #outputFull
+            outputFull.textContent = text.value;
+            // Display the last keycode in #output
+            output.textContent = key;
+        });
+
+        text.addEventListener('input', function() {
+            // Display the full input text in #outputFull
+            outputFull.textContent = text.value;
+        });
+    </script>
+</body>
+</html>
