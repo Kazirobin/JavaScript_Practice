@@ -3,39 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test2</title>
+    <title>Professional Page</title>
     <style>
-        #text{
-            border: 3px solid green;
-            background-color: purple;
-            color: white;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        #text {
+            border: 2px solid #4CAF50;
+            background-color: #663399;
+            color: #fff;
             font-weight: 900;
-            height: 30px;
-            width: 100px;
+            height: 40px;
+            width: calc(100% - 24px);
+            margin-bottom: 20px;
+            padding: 0 10px;
+            border-radius: 4px;
+        }
+        #outputFull, #output {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            height: 20px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
         }
     </style>
 </head>
 <body>
-    <h1 id="outputFull"></h1>
-    <h1 id="output"></h1>
-    <input type="text" name="" id="text">
+    <div class="container">
+        <h1>Last 30 Characters</h1>
+        <div id="outputFull"></div>
+        <h1>Last Key Pressed</h1>
+        <div id="output"></div>
+        <input type="text" name="" id="text">
+        <footer>&copy; 2024 Your Company. All rights reserved.</footer>
+    </div>
     <script>
         const text = document.getElementById('text');
         const output = document.getElementById('output');
         const outputFull = document.getElementById('outputFull');
-        text.addEventListener('keyup', function(event) {
-            const keyCode = event.key || event.which;
-            // Display the last keycode in the input field
-            text.value = key;
-            // Display the full input text in #outputFull
-            outputFull.textContent = text.value;
-            // Display the last keycode in #output
-            output.textContent = key;
-        });
+        let fullText = '';
 
-        text.addEventListener('input', function() {
-            // Display the full input text in #outputFull
-            outputFull.textContent = text.value;
+        text.addEventListener('keyup', function(event) {
+            const key = event.key || event.which;
+            if (key.length === 1) {  // Check if the key is a character
+                // Update the fullText to include the latest key
+                fullText += key;
+                
+                // Ensure the fullText is limited to the last 100 characters
+                if (fullText.length > 100) {
+                    fullText = fullText.substring(fullText.length - 100);
+                }
+
+                // Update the input field to show the last 10 characters
+                text.value = fullText.slice(-10);
+
+                // Display the last 30 characters in #outputFull
+                outputFull.textContent = fullText.slice(-30);
+            }
+
+            // Display the last key pressed in #output
+            output.textContent = key;
         });
     </script>
 </body>
