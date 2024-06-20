@@ -18,11 +18,16 @@ html{
     border: 3px solid pink;
   }
   .main:nth-child(1) {
-    height: 100px;
     background-color: darkblue;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-block: 20px;
   }
   .main > a {
     color: black;
@@ -52,7 +57,6 @@ html{
 }
 .boxs{
     background-color: chocolate;
-    height: 100%;
     display: block;
     padding: 10px;
 

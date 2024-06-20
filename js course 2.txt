@@ -9,7 +9,7 @@
 ➔Week 3-4: Data Types and Type Casting
 
 •Primitive Data Types (string, number, bigint, boolean, null, undefined, Symbol)
-•typeof operator
+•type of operator
 •Type Conversion vs Coercion
 •Explicit and Implicit Type Casting
 
