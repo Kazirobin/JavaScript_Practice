@@ -17,6 +17,9 @@ body{
 .non::after{
     content: counter(list) ".";
 }
+th{
+    padding: 5px;
+}
 @media(max-width:600px){
     th{
         display: none;
