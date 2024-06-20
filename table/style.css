@@ -7,3 +7,25 @@
     text-decoration: none;
     color: #000;
 }
+body{
+    counter-reset: list;
+}
+.non{
+    position: relative;
+    counter-increment: list;
+}
+.non::after{
+    content: counter(list) ".";
+}
+@media(max-width:600px){
+    th{
+        display: none;
+    }
+    td{
+        display: block;
+        position: relative;
+    }
+    td::before{
+        content: attr(data-cell) " : ";
+    }
+}
