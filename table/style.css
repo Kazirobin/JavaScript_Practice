@@ -10,12 +10,16 @@
 body{
     counter-reset: list;
 }
-.non{
+.total{
     position: relative;
     counter-increment: list;
 }
-.non::after{
+.total::after{
     content: counter(list) ".";
+}
+table{
+
+    margin: 0 auto;
 }
 th{
     padding: 5px;
