@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        outline: 0;
+        list-style: none;
+        text-decoration: none;
+        color: #000;
+      }
+      h1 {
+        color: white;
+      }
+      .title {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 40px;
+        width: 100%;
+      }
+      body {
+        background: linear-gradient(
+          to right,
+          red 40%,
+          blue 40% 60%,
+          green 60% 100%
+        );
+      }
+      .item {
+        margin-block: 10px;
+        background: linear-gradient(to right, red, blue 35% 55%, green);
+        width: 100%;
+        text-align: center;
+        border-top: 2px solid white;
+      }
+      .item a {
+        color: teal;
+        cursor: pointer;
+        background-color: aliceblue;
+        padding: 10px;
+        display: inline-block;
+        border-radius: 50%;
+        font-weight: 800;
+        text-transform: uppercase;
+        position: relative;
+        border: 14px solid purple;
+      }
+      a:hover {
+        border: 14px solid salmon;
+      }
+      a::after,
+      a::before {
+        width: 100px;
+        position: absolute;
+        color: #fff;
+      }
+      a::before {
+        content: "Click > >";
+        right: 100%;
+      }
+      a::after {
+        content: "< < Click";
+        left: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <h1>tasks</h1>
+    </div>
+
+    <div class="lists">
+        <!-- item 1 start -->
+        <div class="item">
+            <h1>Rating System</h1>
+            <a href="./task1/index.html">task1</a>
+        </div>
+        <!-- item 1 end -->
+    
+    </div>
+  </body>
+</html>
