@@ -1,12 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task1</title>
+  <style>
+    body {
+      background-color: lightsteelblue;
+    }
+    .posts {
+      max-width: 1200px;
+      margin: 30px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .post {
+      width: min(300px, 50vw - 30px);
+      border: 3px solid pink;
+      border-radius: 20px;
+      padding: 10px;
+      margin: 10px;
+      flex-grow: 1;
+    }
+    .ratings {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: start;
+      float: left;
+    }
+    .rating {
+      height: 47px;
+      width: 47px;
+      background-image: url(https://api.iconify.design/material-symbols:star-rounded.svg?color=%23eeeeee);
+      background-size: 50px 30px;
+      background-repeat: space no-repeat;
+      cursor: pointer;
+    }
+    .ratings input {
+      display: none;
+    }
+    .ratings label:hover ~ label,
+    .ratings label:hover {
+      background-image: url(https://api.iconify.design/material-symbols:star-rounded.svg?color=%23f0ad4e);
+    }
+    .ratings input:checked ~ label {
+      background-image: url(https://api.iconify.design/material-symbols:star-rounded.svg?color=%23f0ad4e);
+    }
+    .rating-btn {
+      padding: 5px;
+      width: 90px;
+      float: right;
+      background-color: skyblue;
+      border-radius: 15px;
+      border-width: 8px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <h1>Task1>> Rating System</h1>
-    
+  <h1>Task1 >> Rating System</h1>
+  <div class="posts">
+    <div class="post" data-post-id="1">
+      <h2>Post heading</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae itaque
+        est perspiciatis?
+      </p>
+      <h6>- Harry Potter</h6>
+      <div class="ratings">
+        <input type="checkbox" id="checker-1-5" class="star" name="rating-1" value="5"/>
+        <label for="checker-1-5" class="rating"></label>
+        <input type="checkbox" id="checker-1-4" class="star" name="rating-1" value="4"/>
+        <label for="checker-1-4" class="rating"></label>
+        <input type="checkbox" id="checker-1-3" class="star" name="rating-1" value="3"/>
+        <label for="checker-1-3" class="rating"></label>
+        <input type="checkbox" id="checker-1-2" class="star" name="rating-1" value="2"/>
+        <label for="checker-1-2" class="rating"></label>
+        <input type="checkbox" id="checker-1-1" class="star" name="rating-1" value="1"/>
+        <label for="checker-1-1" class="rating"></label>
+      </div>
+      <button class="rating-btn">Submit</button>
+    </div>
+    <div class="post" data-post-id="2">
+      <h2>Post heading</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae itaque
+        est perspiciatis?
+      </p>
+      <h6>- Harry Potter</h6>
+      <div class="ratings">
+        <input type="checkbox" id="checker-2-5" class="star" name="rating-2" value="5"/>
+        <label for="checker-2-5" class="rating"></label>
+        <input type="checkbox" id="checker-2-4" class="star" name="rating-2" value="4"/>
+        <label for="checker-2-4" class="rating"></label>
+        <input type="checkbox" id="checker-2-3" class="star" name="rating-2" value="3"/>
+        <label for="checker-2-3" class="rating"></label>
+        <input type="checkbox" id="checker-2-2" class="star" name="rating-2" value="2"/>
+        <label for="checker-2-2" class="rating"></label>
+        <input type="checkbox" id="checker-2-1" class="star" name="rating-2" value="1"/>
+        <label for="checker-2-1" class="rating"></label>
+      </div>
+      <button class="rating-btn">Submit</button>
+    </div>
+    <div class="post" data-post-id="3">
+      <h2>Post heading</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae itaque
+        est perspiciatis?
+      </p>
+      <h6>- Harry Potter</h6>
+      <div class="ratings">
+        <input type="checkbox" id="checker-3-5" class="star" name="rating-3" value="5"/>
+        <label for="checker-3-5" class="rating"></label>
+        <input type="checkbox" id="checker-3-4" class="star" name="rating-3" value="4"/>
+        <label for="checker-3-4" class="rating"></label>
+        <input type="checkbox" id="checker-3-3" class="star" name="rating-3" value="3"/>
+        <label for="checker-3-3" class="rating"></label>
+        <input type="checkbox" id="checker-3-2" class="star" name="rating-3" value="2"/>
+        <label for="checker-3-2" class="rating"></label>
+        <input type="checkbox" id="checker-3-1" class="star" name="rating-3" value="1"/>
+        <label for="checker-3-1" class="rating"></label>
+      </div>
+      <button class="rating-btn">Submit</button>
+    </div>
+    <div class="post" data-post-id="4">
+      <h2>Post heading</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae itaque
+        est perspiciatis?
+      </p>
+      <h6>- Harry Potter</h6>
+      <div class="ratings">
+        <input type="checkbox" id="checker-4-5" class="star" name="rating-4" value="5"/>
+        <label for="checker-4-5" class="rating"></label>
+        <input type="checkbox" id="checker-4-4" class="star" name="rating-4" value="4"/>
+        <label for="checker-4-4" class="rating"></label>
+        <input type="checkbox" id="checker-4-3" class="star" name="rating-4" value="3"/>
+        <label for="checker-4-3" class="rating"></label>
+        <input type="checkbox" id="checker-4-2" class="star" name="rating-4" value="2"/>
+        <label for="checker-4-2" class="rating"></label>
+        <input type="checkbox" id="checker-4-1" class="star" name="rating-4" value="1"/>
+        <label for="checker-4-1" class="rating"></label>
+      </div>
+      <button class="rating-btn">Submit</button>
+    </div>
+    <div class="post" data-post-id="5">
+      <h2>Post heading</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae itaque
+        est perspiciatis?
+      </p>
+      <h6>- Harry Potter</h6>
+      <div class="ratings">
+        <input type="checkbox" id="checker-5-5" class="star" name="rating-5" value="5"/>
+        <label for="checker-5-5" class="rating"></label>
+        <input type="checkbox" id="checker-5-4" class="star" name="rating-5" value="4"/>
+        <label for="checker-5-4" class="rating"></label>
+        <input type="checkbox" id="checker-5-3" class="star" name="rating-5" value="3"/>
+        <label for="checker-5-3" class="rating"></label>
+        <input type="checkbox" id="checker-5-2" class="star" name="rating-5" value="2"/>
+        <label for="checker-5-2" class="rating"></label>
+        <input type="checkbox" id="checker-5-1" class="star" name="rating-5" value="1"/>
+        <label for="checker-5-1" class="rating"></label>
+      </div>
+      <button class="rating-btn">Submit</button>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const posts = document.querySelectorAll('.post');
+
+      posts.forEach(post => {
+        const postId = post.getAttribute('data-post-id');
+        const stars = post.querySelectorAll('.star');
+        const submitBtn = post.querySelector('.rating-btn');
+
+        stars.forEach(star => {
+          star.addEventListener('change', function() {
+            const rating = this.value;
+            stars.forEach(otherStar => {
+              if (otherStar.value <= rating) {
+                otherStar.checked = true;
+              } else {
+                otherStar.checked = false;
+              }
+            });
+          });
+        });
+
+        submitBtn.addEventListener('click', function() {
+          const selectedRating = post.querySelector('.star:checked')?.value || 0;
+          alert(`Post ${postId} rated with ${selectedRating} stars`);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
