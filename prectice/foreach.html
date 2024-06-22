@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foreach</title>
+    <style>
+      .boxs {
+        min-height: 100px;
+        width: 80%;
+        background-color: pink;
+        margin: 0 auto;
+      }
+      .box {
+        min-height: 100px;
+        width: 80%;
+        background-color: purple;
+        margin: 20px auto;
+        padding: 20px;
+      }
+      .box1 {
+        min-height: 100px;
+        width: 80%;
+        background-color: peru;
+        margin: 20px auto;
+        font-size: 60px;
+        font-weight: 800;
+        text-align: center;
+        line-height: 100px;
+        border: 5px solid greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxs">
+      <div class="box">
+        get
+        <div class="box1">One</div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+      </div>
+
+      <div class="box">
+        <div class="box1">Two</div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+      </div>
+      <div class="box">
+        <div class="box1">Three</div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+      </div>
+      <div class="box">
+        <div class="box1">Fore</div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+      </div>
+    </div>
+
+    <script>
+        const box1 = document.querySelectorAll(".box1");
+      const boxs = document.querySelectorAll(".box");
+      let boxThree= Array.from(boxs[1].children).slice(4,6)
+      boxThree.forEach(e => {
+        e.innerHTML="True"
+      })
+        
+      
+    </script>
+  </body>
+</html>
