@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <style>
+        img{
+            height: 60px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="array">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+        <div class="item">16</div>
+        <div class="item">17</div>
+        <div class="item">18</div>
+        <div class="item">19</div>
+        <div class="item">20</div>
+    </div>
+    <div class="output">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+    </div>
+    <script>
+        const array = document.querySelector('.array');
+        const output = document.querySelector('.output');
+        // const arr = Array.from(array.children);
+        /*
+        get by the index
+        const arr = Array.from(array.children)[6];
+        show first 3 item
+        const arr = Array.from(array.children).slice(0,3);
+        arr.forEach(function(item) {
+            item.innerHTML = "ok"
+        });
+        remove first 3 item
+        const arr = Array.from(array.children).slice(3);
+        show last 3 item
+        const arr = Array.from(array.children).slice(-3);
+        arr.forEach(function(item) {
+            item.innerHTML = "ok"
+        });
+        remove last 3 item
+        const arr = Array.from(array.children).slice(0,-3);
+        arr.forEach(function(item) {
+            item.innerHTML = "ok"
+        });
+        set start index and fixed how many i need show
+        const arr = Array.from(array.children).slice(3,6);
+        arr.forEach(function(item) {
+            item.innerHTML = "ok"
+        });
+
+        set start index and fixed how many i need to delete
+        const arr = Array.from(array.children).slice(3,6);
+        arr.forEach(function(item) {
+             item.remove()
+        });
+        */
+        const arr = Array.from(array.children).slice(3,6);
+        arr.forEach(function(item) {
+            item.remove()
+        });
+        console.log(arr);
+        const arr2 = Array.from(output.children)[7];
+        arr2.attributes.src = "../img/FB_IMG_1716509987562.jpg"
+        console.log(arr2);
+    </script>
+</body>
+</html>
