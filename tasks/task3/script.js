@@ -11,6 +11,7 @@ submitBtn.addEventListener("click", () => {
   box1.classList.add("d-none");
   box2.classList.remove("d-none");
 });
+
 doneBtn.addEventListener("click", () => {
   box1.classList.remove("d-none");
   box2.classList.add("d-none");
