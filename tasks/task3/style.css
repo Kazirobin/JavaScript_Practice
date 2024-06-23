@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Overpass", sans-serif;
+  background: #121417;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  color: white;
+}
+h1 {
+  font-size: 35px;
+}
+.d-none {
+  display: none;
+  z-index: -1;
+  visibility: hidden;
+  height: 0;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  position: relative;
+}
+.box {
+  position: absolute;
+  height: 350px;
+  width: 350px;
+  background-color: #252d37;
+  border-radius: 20px;
+  padding: 40px;
+  > .star {
+    background-color: #4e5f73;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+  }
+  > h1 {
+    padding-block: 15px;
+  }
+  > p {
+    max-width: 300px;
+    color: #959eac;
+  }
+  > .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    padding-block: 10px;
+  }
+
+
+  > .submit button:hover {
+    transform: scale(1);
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+  > .submit button {
+    transform: scale(0.98);
+    cursor: pointer;
+    width: 100%;
+    font-weight: 500;
+    font-size: 18px;
+    padding-block: 10px;
+    color: white;
+    letter-spacing: 2px;
+    border: 0;
+    background-color: #f97413;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+  }
+}
+.buttons button:hover ,
+.buttons button.active
+{
+    background-color: #f97413;
+    transform: rotate(360deg);
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+.buttons button {
+    background-color: #4e5f73;
+    transition: all 0.5s ease-in-out;
+    color: #959eac;
+    font-weight: 700;
+    font-size: 18px;
+    height: 40px;
+    width: 40px;
+    border: 0;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    cursor: pointer;
+  }
+.box-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  > div img {
+    width: 100px;
+    padding-bottom: 10px;
+  }
+  > .result {
+    background-color: #384452;
+    color: firebrick;
+    padding: 5px 20px;
+    border-radius: 20px;
+    -webkit-border-radius: ;
+    -moz-border-radius: ;
+    -ms-border-radius: ;
+    -o-border-radius: ;
+  }
+  > p {
+    font-size: 15px;
+  }
+}
+
+#doneBtn {
+  width: 100px;
+  height: 50px;
+  background-color: #959eac;
+  cursor: pointer;
+}

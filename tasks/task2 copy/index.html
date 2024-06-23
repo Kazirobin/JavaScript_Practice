@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task2</title>
+    <style>
+      body {
+        background-color: lightsteelblue;
+      }
+      .posts {
+        max-width: 1200px;
+        margin: 30px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .post {
+        width: min(300px, 50vw - 30px);
+        border: 3px solid pink;
+        border-radius: 20px;
+        padding: 10px;
+        margin: 10px;
+        flex-grow: 1;
+      }
+      .ratings {
+        float: left;
+        margin-right: auto;
+      }
+      .star-btn {
+        background-color: lightsteelblue;
+        border: 0;
+        font-size: 30px;
+        cursor: pointer;
+      }
+      .rating-btn {
+        background-color: lightsteelblue;
+        float: right;
+        padding: 10px;
+        border-radius: 15px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Task2 >> Rating System #9733</h1>
+    <div class="posts">
+      <div class="post" data-post-id="1">
+        <h2>Post heading</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae itaque
+          est perspiciatis?
+        </p>
+        <h6>- Harry Potter</h6>
+        <div class="ratings">
+          <button class="star-btn">&#9734;</button>
+          <button class="star-btn">&#9734;</button>
+          <button class="star-btn">&#9734;</button>
+          <button class="star-btn">&#9734;</button>
+          <button class="star-btn">&#9734;</button>
+        </div>
+        <button class="rating-btn">Submit</button>
+      </div>
+      <div class="post" data-post-id="2">
+        <h2>Post heading</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae itaque
+          est perspiciatis?
+        </p>
+        <h6>- Harry Potter</h6>
+        <div class="ratings">
+          <button class="star-btn">&#9734;</button>
+          <button class="star-btn">&#9734;</button>
+          <button class="star-btn">&#9734;</button>
+          <button class="star-btn">&#9734;</button>
+          <button class="star-btn">&#9734;</button>
+        </div>
+        <button class="rating-btn">Submit</button>
+      </div>
+      <div class="post" data-post-id="3">
+        <h2>Post heading</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae itaque
+          est perspiciatis?
+        </p>
+        <h6>- Harry Potter</h6>
+        <div class="ratings">
+          <button class="star-btn">&#9734;</button>
+          <button class="star-btn">&#9734;</button>
+          <button class="star-btn">&#9734;</button>
+          <button class="star-btn">&#9734;</button>
+          <button class="star-btn">&#9734;</button>
+        </div>
+        <button class="rating-btn">Submit</button>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const posts = document.querySelectorAll(".post");
+        posts.forEach((post) => {
+          const stars = post.querySelectorAll(".star-btn");
+          const submitBtn = post.querySelector(".rating-btn");
+          let selectedRating = 0;
+          stars.forEach((star, index) => {
+            star.addEventListener("click", () => {
+              selectedRating = index + 1;
+              stars.forEach((s, i) => {
+                if (i < selectedRating) {
+                  s.innerHTML = "&#9733";
+                } else {
+                  s.innerHTML = "&#9734";
+                }
+              });
+            });
+          });
+          const postId = post.getAttribute("data-post-id")
+          submitBtn.addEventListener("click",() => {
+            alert(`you give post number ${postId} to ${selectedRating} star`)
+          })
+        });
+      });
+    </script>
+  </body>
+</html>
