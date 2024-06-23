@@ -14,12 +14,21 @@ submitBtn.addEventListener("click", () => {
 doneBtn.addEventListener("click", () => {
   box1.classList.remove("d-none");
   box2.classList.add("d-none");
+  buttons.forEach((btn, i) => {
+    btn.classList.remove("active");
+  });
 });
 
 buttons.forEach((btn, i) => {
   btn.addEventListener("click", () => {
-    btn.classList.toggle("active");
-    console.log(i);
+    buttons.forEach((e) => {
+      e.classList.remove("active");
+    });
+
+    for (let j = 0; j <= i; j++) {
+      buttons[j].classList.add("active");
+    }
     result.innerHTML = `You selected ${i + 1} out of 5`;
   });
 });
+
