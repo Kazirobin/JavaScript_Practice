@@ -5,7 +5,7 @@ const box2 = document.querySelector(".box-2");
 const submitBtn = document.getElementById("submitBtn");
 const doneBtn = document.getElementById("doneBtn");
 const buttons = document.querySelectorAll(".buttons button");
-const result = document.querySelector('.result');
+const result = document.querySelector(".result");
 
 submitBtn.addEventListener("click", () => {
   box1.classList.add("d-none");
@@ -20,6 +20,6 @@ buttons.forEach((btn, i) => {
   btn.addEventListener("click", () => {
     btn.classList.toggle("active");
     console.log(i);
-    result.innerHTML = `You selected ${i+1} out of 5`
+    result.innerHTML = `You selected ${i + 1} out of 5`;
   });
 });
