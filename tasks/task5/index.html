@@ -47,6 +47,7 @@
       <button class="input" value="*">*</button>
       <button class="input" value="/">/</button>
       <button class="input" value="=">=</button>
+      <button class="input" value="x">x</button>
     </div>
 
     <script>
@@ -54,24 +55,16 @@
       const inputBox = document.querySelector(".input-box");
       const inputs = document.querySelectorAll(".input");
       let currentInput = "";
-      output.innerHTML = currentInput;
-
       inputs.forEach((input) => {
-        input.addEventListener("click", function () {
-          currentInput += input.value;
+        input.addEventListener("click", () => {
           if (input.value === "=") {
-            try {
-        currentInput = eval(currentInput).toString();
-      } catch (e) {
-        currentInput = "Error";
-        console.log(e);
-      }
-    } else {
-      currentInput = input.value;
-    }
-          
-          output.innerHTML += currentInput;
-          console.log(currentInput);
+            currentInput = eval(currentInput);
+          } else if (input.value === "x") {
+            currentInput = currentInput.slice(0, -1);
+          } else {
+            currentInput += input.value;
+          }
+          output.innerHTML = currentInput;
         });
       });
     </script>
