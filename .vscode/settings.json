@@ -110,5 +110,6 @@
     "Uttara",
     "Uttaral"
   ],
-  "cSpell.language": "en,en-US"
+  "cSpell.language": "en,en-US",
+  "liveServer.settings.port": 5501
 }
