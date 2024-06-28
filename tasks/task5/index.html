@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>update</title>
+    <style>
+      .output {
+        height: 100px;
+        width: 80vw;
+        background-color: blue;
+        border-radius: 30px;
+        margin: 30px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 35px;
+        letter-spacing: 5px;
+      }
+      .input-box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .input {
+        padding: 20px;
+        font-weight: 800;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="output"></div>
+    <div class="input-box">
+      <button class="input" value="1">1</button>
+      <button class="input" value="2">2</button>
+      <button class="input" value="3">3</button>
+      <button class="input" value="4">4</button>
+      <button class="input" value="5">5</button>
+      <button class="input" value="6">6</button>
+      <button class="input" value="7">7</button>
+      <button class="input" value="8">8</button>
+      <button class="input" value="9">9</button>
+      <button class="input" value="0">0</button>
+      <button class="input" value="+">+</button>
+      <button class="input" value="-">-</button>
+      <button class="input" value="*">*</button>
+      <button class="input" value="/">/</button>
+      <button class="input" value="=">=</button>
+    </div>
+
+    <script>
+      const output = document.querySelector(".output");
+      const inputBox = document.querySelector(".input-box");
+      const inputs = document.querySelectorAll(".input");
+      let currentInput = "";
+      output.innerHTML = currentInput;
+
+      inputs.forEach((input) => {
+        input.addEventListener("click", function () {
+          currentInput += input.value;
+          if (input.value === "=") {
+            try {
+        currentInput = eval(currentInput).toString();
+      } catch (e) {
+        currentInput = "Error";
+        console.log(e);
+      }
+    } else {
+      currentInput = input.value;
+    }
+          
+          output.innerHTML += currentInput;
+          console.log(currentInput);
+        });
+      });
+    </script>
+  </body>
+</html>

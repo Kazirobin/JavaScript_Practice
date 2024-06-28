@@ -10,6 +10,5 @@ let b = color(255);
 }
 const button = document.querySelector("button");
 button.addEventListener("click", () => {
-  let runFunc = rgb();
-  document.documentElement.style.setProperty("--bg", runFunc);
+  document.documentElement.style.setProperty("--bg", rgb());
 });
