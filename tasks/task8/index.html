@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+
+
+      <div class="slid slid_1" style="background-color: #FC8452;">
+        <div class="left">
+          <h1>Drive Customer Satisfaction and Trust</h1>
+          <p>
+            Know what customers boost your ROI and what customers make you lose
+            money across channels, demographics, and segments.
+          </p>
+          <a href="!#" style="color: #FC8452;">Learn More 
+            <img src="./img/Arrow Outwards.svg" alt="">
+        </a>
+        </div>
+        <div class="right">
+            <img src="./img/laptop/slid_1.png" alt="">
+        </div>
+      </div>
+
+      
+
+
+      <div class="slid slid_2" style="background-color: #9A60B4;">
+        <div class="left">
+          <h1>Drive Customer Satisfaction and Trust</h1>
+          <p>
+            Know what customers boost your ROI and what customers make you lose
+            money across channels, demographics, and segments.
+          </p>
+          <a href="!#" style="color: #9A60B4;">Learn More <img src="./img/Arrow Outwards.svg" alt=""></a>
+        </div>
+        <div class="right">
+            <img src="./img/laptop/slid_2.png" alt="">
+        </div>
+      </div>
+
+
+
+      <div class="slid slid_3" style="background-color:#3BA272 ;">
+        <div class="left">
+          <h1>Drive Customer Satisfaction and Trust</h1>
+          <p>
+            Know what customers boost your ROI and what customers make you lose
+            money across channels, demographics, and segments.
+          </p>
+          <a href="!#" style="color:#3BA272 ;">Learn More <img src="./img/Arrow Outwards.svg" alt=""></a>
+        </div>
+        <div class="right">
+            <img src="./img/laptop/slid_3.png" alt="">
+        </div>
+      </div>
+
+
+
+      <div class="slid slid_4" style="background-color: #FAC858;">
+        <div class="left">
+          <h1>Drive Customer Satisfaction and Trust</h1>
+          <p>
+            Know what customers boost your ROI and what customers make you lose
+            money across channels, demographics, and segments.
+          </p>
+          <a href="!#" style="color: #FAC858;">Learn More <img src="./img/Arrow Outwards.svg" alt=""></a>
+        </div>
+        <div class="right">
+            <img src="./img/laptop/slid_4.png" alt="">
+        </div>
+      </div>
+
+
+
+      <div class="slid slid_5" style="background-color: #73C0DE;">
+        <div class="left">
+          <h1>Drive Customer Satisfaction and Trust</h1>
+          <p>
+            Know what customers boost your ROI and what customers make you lose
+            money across channels, demographics, and segments.
+          </p>
+          <a href="!#" style="color: #73C0DE;">Learn More <img src="./img/Arrow Outwards.svg" alt=""></a>
+        </div>
+        <div class="right">
+            <img src="./img/laptop/slid_5.png" alt="">
+        </div>
+      </div>
+
+
+    </div>
+
+    <script>
+        let slides = document.querySelectorAll('.slid');
+        const totalSlides = slides.length;
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.className = 'slid'; // Reset class
+                slide.classList.add(`slid_${(index + totalSlides - 1) % totalSlides + 1}`);
+            });
+        }
+
+        function changeSlide() {
+            slides.forEach((slide, index) => {
+                const currentClass = slide.className.match(/slid_\d/)[0];
+                let newClassIndex = parseInt(currentClass.split('_')[1]) + 1;
+                if (newClassIndex > totalSlides) {
+                    newClassIndex = 1;
+                }
+                slide.classList.remove(currentClass);
+                slide.classList.add(`slid_${newClassIndex}`);
+            });
+
+            updateSlides();
+        }
+
+        setInterval(changeSlide, 1000); // Change slide every 3 seconds
+    </script>
+  </body>
+</html>
