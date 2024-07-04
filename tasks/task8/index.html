@@ -94,6 +94,21 @@
 
     </div>
 
-  
+    <script>
+      const slides = document.querySelectorAll('.slid');
+      const slideClasses = ['slid_1', 'slid_2', 'slid_3', 'slid_4', 'slid_5'];
+      let currentIndex = 0;
+
+      function updateSlides() {
+          slides.forEach((slide, index) => {
+              slide.classList.remove(...slideClasses);
+              slide.classList.add(slideClasses[(currentIndex + index) % slideClasses.length]);
+          });
+          currentIndex = (currentIndex + 1) % slideClasses.length;
+      }
+
+      setInterval(updateSlides, 1000); // Change slide every 1 second
+      updateSlides(); // Initialize the slides
+  </script>
   </body>
 </html>
