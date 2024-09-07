@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Test</title>
+    <style>
+        .body{
+            padding: 20px;
+        }
+        .boxs{
+            background-color: yellowgreen;
+        }
+        .box{
+            background-color: violet;
+            display:block;
+        }
+        h1{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+
+        <div class="boxs">
+            <div class="box">
+                <h1 id="num_1">This ia a Heading</h1>
+            </div>
+            <div class="box">
+                <h1>This ia a Heading</h1>
+                <p>hello</p>
+            </div>
+            <div class="box">
+                <h1>This ia a Heading</h1>
+
+            </div>
+        </div>
+
+
+
+    </div>
+    <script>
+const num_1 = document.querySelector('#num_1');
+for (let x=0;x<10;x++){
+    console.log( x);
+    num_1.innerHTML +=x;
+}
+    </script>
+</body>
+</html>

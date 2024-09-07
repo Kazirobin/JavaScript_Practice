@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 2</title>
+    <style>
+        .box{
+            padding-bottom: 20px;
+        }
+        .body{
+            height: 500px;
+            width: 500px;
+            background-color: red;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+        }
+        .text{
+            color: #000;
+            font-size: 40px;
+            font-weight: 900;
+            -webkit-text-stroke: #fff 1px;
+        }
+        button{
+            padding:10px 20px;
+            border-radius: 25px;
+        }
+        #color{
+            padding:10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+
+        <h1 class="text">this is a color code</h1>
+        <div class="box">
+
+            <input type="text" id="color">
+            <button id="copy-btn" type="submit">Copy</button>
+        </div>
+        <button id="main-btn">Change Color</button>
+    </div>
+
+    
+    <script>
+        const body = document.querySelector('.body');
+        const text = document.querySelector('.text');
+        const color = document.querySelector('#color');
+        const copyBtn = document.querySelector('#copy-btn');
+        const mainBtn = document.querySelector('#main-btn');
+        text.innerHTML = 
+    </script>
+</body>
+</html>
