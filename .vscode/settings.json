@@ -111,5 +111,6 @@
     "Uttaral"
   ],
   "cSpell.language": "en,en-US",
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "cSpell.enableFiletypes": ["!html"]
 }
