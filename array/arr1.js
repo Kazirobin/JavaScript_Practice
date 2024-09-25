@@ -12,11 +12,13 @@ input_1.addEventListener("input",() => {
 
     let arr3 = arr1.length
     length.innerHTML = arr3
-    
-    arrSort(arr1)
-    let arr4 = JSON.stringify(arr1)
+    //Sort the Array
+    let sortArr = [...arr1]
+    arrSort(sortArr)
+    let arr4 = JSON.stringify(sortArr)
     input2.innerHTML = arr4
-
+    
+    //Sort the Array Reverse
     let arr5 = JSON.stringify(arr1.reverse())
     input3.innerHTML = arr5
 
@@ -37,3 +39,12 @@ const input2 = document.querySelector('.input-2');
 const input3 = document.querySelector('.input-3');
 
 console.log(arrSort(arr1))
+const input4 = document.querySelector('#input-4');
+input4.addEventListener("input",() => { 
+    let var6 = Number(input4.value)
+    let found = arr1.indexOf(var6)
+    input5.innerHTML = found
+console.log(found)
+
+ })
+const input5 = document.querySelector('.input-5');
