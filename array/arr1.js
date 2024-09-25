@@ -20,12 +20,23 @@ input_1.addEventListener("input",() => {
     //Find array length
     let arr3 = arr1.length
     length.innerHTML = arr3
+<<<<<<< HEAD
     
+=======
+>>>>>>> 6b40e840d104264ed146b30668ac518964e41c72
     //Sort the Array
     let sortArr = [...arr1]
     arrSort(sortArr)
     let arr4 = JSON.stringify(sortArr)
     input2.innerHTML = arr4
+<<<<<<< HEAD
+=======
+    
+    //Sort the Array Reverse
+    let arr5 = JSON.stringify(arr1.reverse())
+    input3.innerHTML = arr5
+
+>>>>>>> 6b40e840d104264ed146b30668ac518964e41c72
     
     //Sort the Array Reverse
     let arr5 = JSON.stringify(arr1.reverse())
@@ -43,12 +54,18 @@ const arrSort = (arr) => {
 }
 
 
+<<<<<<< HEAD
 
 console.log(arrSort(arr1))
+=======
+console.log(arrSort(arr1))
+const input4 = document.querySelector('#input-4');
+>>>>>>> 6b40e840d104264ed146b30668ac518964e41c72
 input4.addEventListener("input",() => { 
     let var6 = Number(input4.value)
     let found = arr1.indexOf(var6)
     input5.innerHTML = found
+<<<<<<< HEAD
     console.log(found)
     console.log(arr1)
 })
@@ -111,3 +128,9 @@ complementMap.set(target - num, i);
 এভাবেই, পরবর্তীতে যদি `7` পাওয়া যায়, তাহলে এটি আমাদের বলে দেবে যে, `2` (ইন্ডেক্স `0`) এবং `7` (ইন্ডেক্স `1`) মিলে `9` তৈরি করে।
  * 
  */
+=======
+console.log(found)
+
+ })
+const input5 = document.querySelector('.input-5');
+>>>>>>> 6b40e840d104264ed146b30668ac518964e41c72
