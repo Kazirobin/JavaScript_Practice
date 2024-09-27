@@ -55,7 +55,8 @@ input4.addEventListener("input",() => {
 */
 
 console.clear()
-const arr = [2,5,8,17,20]
+
+const arr = [3,1,1,8,5,2,4]
 const num = 13
 console.log(arr)
 
@@ -66,9 +67,13 @@ function twoSum (nums,target){
         if(complementMap.has(num)){
             return [complementMap.get(num),i]
         }
+        complementMap.set(target - num,i)
     }
+
+    return []
 }
-console.log(twoSum(arr,num))
+console.log(twoSum([2,7,11,15],9))
+console.log(twoSum([3,2,4],6))
 
 
 /**
