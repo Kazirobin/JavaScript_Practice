@@ -6,17 +6,34 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="main text-center m-2">
-        <div class="fixed w-full navbar bg-black text-white min-h-[80px]">
-            Navbar Position Fixed .
+    <div class="main  text-center">
+
+
+        <div class="fixed top-0 w-full navbar bg-black text-white min-h-[80px]">
+            Navbar Position Fixed 
         </div>
-        <div class="body flex md:flex-row flex-col-reverse">
-            <div class="sidebar bg-slate-100 min-h-[80px] lg:w-2/6 md:w-[450px] sm:w-full  grid place-content-center  ">
+
+
+        <div class="mt-[80px] flex md:flex-row flex-col-reverse">
+
+            <div class="sidebar md:fixed left-0 md:min-h-screen bg-slate-100  md:w-[30%] sm:w-full  grid place-items-center  ">
                 Sidebar Position Fixed
             </div>
-            <div class="content lg:w-4/6 h-[100vh] bg-slate-500  sm:w-full grid place-content-center">
+
+
+            <div class="sidebar hidden left-0 md:min-h-screen bg-slate-100  md:w-[30%] sm:w-full  md:block">
+                Sidebar Position Fixed
+            </div>
+
+
+          
+
+
+            <div class="content w-full md h-[100vh] bg-slate-500  grid place-content-center">
                 content area
             </div>
+
+
         </div>
     </div>
 
