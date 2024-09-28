@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark/Light Mode Toggle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .hidden-menu {
+        display: none;
+      }
+      /* Transition for dark/light mode switch */
+      body {
+        transition: background-color 0.5s, color 0.5s;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-black dark:bg-gray-900 dark:text-white">
+    <div class="main text-center">
+      <!-- Navbar -->
+      <div class="fixed top-0 w-full z-20 navbar text-white dark:bg-gray-900">
+        <nav class="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md">
+          <div
+            class="container mx-auto flex items-center justify-between px-4 py-3"
+          >
+            <!-- Left: Sidebar Toggle Icon and Logo -->
+            <div class="flex items-center space-x-4">
+              <!-- Sidebar Toggle Icon -->
+              <button
+                class="p-2 rounded-md text-blue-700 hover:bg-gray-200 dark:hover:bg-gray-700"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Logo -->
+              <a
+                href="#"
+                class="text-xl font-semibold text-gray-800 dark:text-white"
+                >Website Logo</a
+              >
+            </div>
+
+            <!-- Middle: Search Input with Magnify Icon -->
+            <div class="relative mx-auto text-gray-600 lg:block hidden">
+              <input
+                class="border-2 border-gray-300 bg-white h-10 pl-2 pr-8 rounded-lg text-sm focus:outline-none"
+                type="search"
+                name="search"
+                placeholder="Search"
+              />
+              <button type="submit" class="absolute right-0 top-0 mt-3 mr-2">
+                <svg
+                  class="text-gray-600 h-4 w-4 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  id="Capa_1"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 56.966 56.966"
+                  style="enable-background: new 0 0 56.966 56.966"
+                  xml:space="preserve"
+                  width="512px"
+                  height="512px"
+                >
+                  <path
+                    d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <!-- Right: Language Select, Dark Mode Toggle, User Dropdown -->
+            <div class="flex items-center space-x-4">
+              <!-- Language Select -->
+              <select
+                class="bg-gray-100 dark:bg-gray-800 text-blue-700 dark:text-white px-3 py-2 rounded-lg focus:outline-none"
+              >
+                <option value="EN">EN</option>
+                <option value="BN">BN</option>
+              </select>
+
+              <!-- Dark Mode Toggle -->
+              <button
+                id="theme-toggle"
+                class="p-2 rounded-md text-red-700 dark:text-red-500"
+              >
+                <!-- Sun Icon (visible in light mode) -->
+                <img
+                  id="sun-icon"
+                  src="./sun-2-svgrepo-com.svg"
+                  alt="Sun Icon"
+                  class="w-6 h-6 hidden dark:block"
+                />
+
+                <!-- Moon Icon (visible in dark mode) -->
+                <img
+                  id="moon-icon"
+                  src="./moon-svgrepo-com.svg"
+                  alt="Moon Icon"
+                  class="w-6 h-6 hidden dark:block"
+                />
+              </button>
+
+              <!-- User Dropdown -->
+              <div class="relative">
+                <button
+                  id="user-menu-button"
+                  class="flex items-center space-x-2 text-blue-700 dark:text-white focus:outline-none"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 12c2.209 0 4-1.791 4-4s-1.791-4-4-4-4 1.791-4 4 1.791 4 4 4zm0 2c-3.313 0-6 2.687-6 6v2h12v-2c0-3.313-2.687-6-6-6z"
+                    />
+                  </svg>
+                  <span>Account</span>
+                </button>
+                <div
+                  id="user-menu"
+                  class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-2 hidden"
+                >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >Sign In</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >Login</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="mt-[65px] flex md:flex-row flex-col-reverse">
+        <div
+          class="sidebar md:fixed md:block left-0 md:min-h-screen bg-slate-100 md:w-[20%] sm:w-full pt-4 sm:flex sm:justify-evenly items-center justify-center"
+        >
+          <div>
+            <ul class="space-y-4 pl-7">
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center space-x-3 text-gray-700 hover:text-blue-700"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 12l2-2m0 0l7-7 7 7m-9 5v6m-4 0h8m4 0v-6m0 0l-2 2m0 0l-7-7-7 7z"
+                    ></path>
+                  </svg>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center space-x-3 text-gray-700 hover:text-blue-700"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  <span>Save</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center space-x-3 text-gray-700 hover:text-blue-700"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12h6m2 0a2 2 0 110 4H7a2 2 0 010-4h10zm4 0V7a2 2 0 00-2-2H5a2 2 0 00-2 2v5m14 0H7"
+                    ></path>
+                  </svg>
+                  <span>Support</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center space-x-3 text-gray-700 hover:text-blue-700"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h18M3 8h18M3 13h18M3 18h18"
+                    ></path>
+                  </svg>
+                  <span>Cart</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center space-x-3 text-gray-700 hover:text-blue-700"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 9V7a4 4 0 10-8 0v2m8 10H8a4 4 0 01-8-4V9"
+                    ></path>
+                  </svg>
+                  <span>Orders</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-left py-3 font-bold">Subsicion</p>
+
+            <ul class="space-y-4 pl-7">
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center space-x-3 text-gray-700 hover:text-blue-700"
+                >
+                  <!-- Category Icon -->
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 10h16M4 14h16M4 18h16"
+                    />
+                  </svg>
+                  <span>Category</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center space-x-3 text-gray-700 hover:text-blue-700"
+                >
+                  <!-- Hotel Icon -->
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 21V10c0-1.105.895-2 2-2h14a2 2 0 012 2v11M9 21v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4h6zM15 21v-4a2 2 0 012-2h2a2 2 0 012 2v4h-6z"
+                    />
+                  </svg>
+                  <span>Hotel</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center space-x-3 text-gray-700 hover:text-blue-700"
+                >
+                  <!-- Wedding Venue Icon -->
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 2l5 5-5 5-5-5 5-5zm0 12v8m-4-4h8"
+                    />
+                  </svg>
+                  <span>Wedding Venue</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center space-x-3 text-gray-700 hover:text-blue-700"
+                >
+                  <!-- Wedding Event Icon -->
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M7 7h10M7 11h10M7 15h6M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"
+                    />
+                  </svg>
+                  <span>Wedding Event</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="sidebar md:block left-0 md:min-h-screen bg-slate-100 md:w-[24%] sm:w-full pt-4 sm:flex sm:justify-evenly items-center justify-center"
+        >
+          .
+        </div>
+
+        <div class="content w-full bg-slate-500 grid place-content-center">
+          <div
+            class="venues bg-slate-100 grid place-content-between grid-cols-1 gap-6 p-4"
+          >
+            <h1 class="text-left font-semibold text-5xl">
+              Venues in your city
+            </h1>
+            <div
+              class="cards grid place-content-between grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4"
+            >
+              <!-- card start -->
+              <div
+                class="card lg:w-[300px] relative bg-white shadow-lg rounded-lg overflow-hidden"
+              >
+                <img
+                  src="http://picsum.photos/id/1/200"
+                  alt="Venue Image"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4">
+                  <p
+                    class="text-white bg-purple-800 p-2 rounded-lg text-sm mb-2 absolute top-2"
+                  >
+                    blenders
+                  </p>
+
+                  <div
+                    class="text-white p-2 rounded-lg text-sm mb-2 absolute top-2 right-2 card"
+                  >
+                    <button class="theme-toggle p-2 rounded-md">
+                      <!-- Heart Filled Icon (visible initially in light mode) -->
+                      <img
+                        class="fill-icon w-6 h-6"
+                        src="./heart-fill.svg"
+                        alt="Filled Heart Icon"
+                      />
+
+                      <!-- Heart Outline Icon (initially hidden) -->
+                      <img
+                        class="outline-icon w-6 h-6 hidden"
+                        src="./heart-outline.svg"
+                        alt="Outline Heart Icon"
+                      />
+                    </button>
+                  </div>
+
+                  <h1 class="text-lg font-semibold text-gray-800 mb-1">
+                    Chhavi Hotels and Banquets
+                  </h1>
+                  <p class="text-sm text-gray-600 flex items-center">
+                    <span class="text-yellow-400 mr-1">
+                      <!-- Star SVG Icon -->
+                      <svg
+                        class="w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                        />
+                      </svg>
+                    </span>
+                    4.5 (15)
+                    <span class="mx-2">•</span>
+                    <!-- Dot in the middle -->
+                    Ar Riyadh (Al Qirawan)
+                  </p>
+                  <p class="text-sm text-gray-600 flex items-center mt-2">
+                    <span class="text-red-500 mr-1">
+                      <!-- Pin SVG Icon -->
+                      <svg
+                        class="w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 2C8.686 2 6 4.686 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.314-2.686-6-6-6zm0 8.5c-1.378 0-2.5-1.121-2.5-2.5S10.622 5.5 12 5.5s2.5 1.121 2.5 2.5-1.121 2.5-2.5 2.5z"
+                        />
+                      </svg>
+                    </span>
+                    1 promotion
+                    <span class="ml-2 text-red-500">-20%</span>
+                  </p>
+
+                  <div class="flex justify-between text-sm text-gray-600 mt-3">
+                    <div class="left">From $1,000</div>
+                    <div class="right">50 to 300 people</div>
+                  </div>
+
+                  <div class="tags flex flex-wrap mt-3">
+                    <div
+                      class="tag bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded mr-2 mb-2"
+                    >
+                      2 tea people
+                    </div>
+                    <div
+                      class="tag bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded mr-2 mb-2"
+                    >
+                      4 Rooms
+                    </div>
+                    <div
+                      class="tag bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded mb-2"
+                    >
+                      +6 more
+                    </div>
+                  </div>
+
+                  <p class="text-sm text-gray-600 flex items-center mt-4">
+                    <span class="text-green-500 mr-1">
+                      <!-- Clock SVG Icon -->
+                      <svg
+                        class="w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 1C5.935 1 1 5.935 1 12s4.935 11 11 11 11-4.935 11-11S18.065 1 12 1zm0 20c-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9-4.029 9-9 9zm1-9h-4V7h2v5h2v2z"
+                        />
+                      </svg>
+                    </span>
+                    Responds within 24 hours
+                  </p>
+                </div>
+              </div>
+              <!-- card end -->
+              <!-- card start -->
+              <div
+                class="card lg:w-[300px] relative bg-white shadow-lg rounded-lg overflow-hidden"
+              >
+                <img
+                  src="http://picsum.photos/id/4/200"
+                  alt="Venue Image"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4">
+                  <p
+                    class="text-white bg-purple-800 p-2 rounded-lg text-sm mb-2 absolute top-2"
+                  >
+                    blenders
+                  </p>
+
+                  <div
+                    class="text-white p-2 rounded-lg text-sm mb-2 absolute top-2 right-2 card"
+                  >
+                    <button class="theme-toggle p-2 rounded-md">
+                      <!-- Heart Filled Icon (visible initially in light mode) -->
+                      <img
+                        class="fill-icon w-6 h-6"
+                        src="./heart-fill.svg"
+                        alt="Filled Heart Icon"
+                      />
+
+                      <!-- Heart Outline Icon (initially hidden) -->
+                      <img
+                        class="outline-icon w-6 h-6 hidden"
+                        src="./heart-outline.svg"
+                        alt="Outline Heart Icon"
+                      />
+                    </button>
+                  </div>
+
+                  <h1 class="text-lg font-semibold text-gray-800 mb-1">
+                    Chhavi Hotels and Banquets
+                  </h1>
+                  <p class="text-sm text-gray-600 flex items-center">
+                    <span class="text-yellow-400 mr-1">
+                      <!-- Star SVG Icon -->
+                      <svg
+                        class="w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                        />
+                      </svg>
+                    </span>
+                    4.5 (15)
+                    <span class="mx-2">•</span>
+                    <!-- Dot in the middle -->
+                    Ar Riyadh (Al Qirawan)
+                  </p>
+                  <p class="text-sm text-gray-600 flex items-center mt-2">
+                    <span class="text-red-500 mr-1">
+                      <!-- Pin SVG Icon -->
+                      <svg
+                        class="w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 2C8.686 2 6 4.686 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.314-2.686-6-6-6zm0 8.5c-1.378 0-2.5-1.121-2.5-2.5S10.622 5.5 12 5.5s2.5 1.121 2.5 2.5-1.121 2.5-2.5 2.5z"
+                        />
+                      </svg>
+                    </span>
+                    1 promotion
+                    <span class="ml-2 text-red-500">-20%</span>
+                  </p>
+
+                  <div class="flex justify-between text-sm text-gray-600 mt-3">
+                    <div class="left">From $1,000</div>
+                    <div class="right">50 to 300 people</div>
+                  </div>
+
+                  <div class="tags flex flex-wrap mt-3">
+                    <div
+                      class="tag bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded mr-2 mb-2"
+                    >
+                      2 tea people
+                    </div>
+                    <div
+                      class="tag bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded mr-2 mb-2"
+                    >
+                      4 Rooms
+                    </div>
+                    <div
+                      class="tag bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded mb-2"
+                    >
+                      +6 more
+                    </div>
+                  </div>
+
+                  <p class="text-sm text-gray-600 flex items-center mt-4">
+                    <span class="text-green-500 mr-1">
+                      <!-- Clock SVG Icon -->
+                      <svg
+                        class="w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 1C5.935 1 1 5.935 1 12s4.935 11 11 11 11-4.935 11-11S18.065 1 12 1zm0 20c-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9-4.029 9-9 9zm1-9h-4V7h2v5h2v2z"
+                        />
+                      </svg>
+                    </span>
+                    Responds within 24 hours
+                  </p>
+                </div>
+              </div>
+              <!-- card end -->
+              <!-- card start -->
+              <div
+                class="card lg:w-[300px] relative bg-white shadow-lg rounded-lg overflow-hidden"
+              >
+                <img
+                  src="http://picsum.photos/id/5/200"
+                  alt="Venue Image"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4">
+                  <p
+                    class="text-white bg-purple-800 p-2 rounded-lg text-sm mb-2 absolute top-2"
+                  >
+                    blenders
+                  </p>
+
+                  <div
+                    class="text-white p-2 rounded-lg text-sm mb-2 absolute top-2 right-2 card"
+                  >
+                    <button class="theme-toggle p-2 rounded-md">
+                      <!-- Heart Filled Icon (visible initially in light mode) -->
+                      <img
+                        class="fill-icon w-6 h-6"
+                        src="./heart-fill.svg"
+                        alt="Filled Heart Icon"
+                      />
+
+                      <!-- Heart Outline Icon (initially hidden) -->
+                      <img
+                        class="outline-icon w-6 h-6 hidden"
+                        src="./heart-outline.svg"
+                        alt="Outline Heart Icon"
+                      />
+                    </button>
+                  </div>
+
+                  <h1 class="text-lg font-semibold text-gray-800 mb-1">
+                    Chhavi Hotels and Banquets
+                  </h1>
+                  <p class="text-sm text-gray-600 flex items-center">
+                    <span class="text-yellow-400 mr-1">
+                      <!-- Star SVG Icon -->
+                      <svg
+                        class="w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                        />
+                      </svg>
+                    </span>
+                    4.5 (15)
+                    <span class="mx-2">•</span>
+                    <!-- Dot in the middle -->
+                    Ar Riyadh (Al Qirawan)
+                  </p>
+                  <p class="text-sm text-gray-600 flex items-center mt-2">
+                    <span class="text-red-500 mr-1">
+                      <!-- Pin SVG Icon -->
+                      <svg
+                        class="w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 2C8.686 2 6 4.686 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.314-2.686-6-6-6zm0 8.5c-1.378 0-2.5-1.121-2.5-2.5S10.622 5.5 12 5.5s2.5 1.121 2.5 2.5-1.121 2.5-2.5 2.5z"
+                        />
+                      </svg>
+                    </span>
+                    1 promotion
+                    <span class="ml-2 text-red-500">-20%</span>
+                  </p>
+
+                  <div class="flex justify-between text-sm text-gray-600 mt-3">
+                    <div class="left">From $1,000</div>
+                    <div class="right">50 to 300 people</div>
+                  </div>
+
+                  <div class="tags flex flex-wrap mt-3">
+                    <div
+                      class="tag bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded mr-2 mb-2"
+                    >
+                      2 tea people
+                    </div>
+                    <div
+                      class="tag bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded mr-2 mb-2"
+                    >
+                      4 Rooms
+                    </div>
+                    <div
+                      class="tag bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded mb-2"
+                    >
+                      +6 more
+                    </div>
+                  </div>
+
+                  <p class="text-sm text-gray-600 flex items-center mt-4">
+                    <span class="text-green-500 mr-1">
+                      <!-- Clock SVG Icon -->
+                      <svg
+                        class="w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 1C5.935 1 1 5.935 1 12s4.935 11 11 11 11-4.935 11-11S18.065 1 12 1zm0 20c-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9-4.029 9-9 9zm1-9h-4V7h2v5h2v2z"
+                        />
+                      </svg>
+                    </span>
+                    Responds within 24 hours
+                  </p>
+                </div>
+              </div>
+              <!-- card end -->
+              <!-- card start -->
+              <div
+                class="card lg:hidden lg:w-[300px] relative bg-white shadow-lg rounded-lg overflow-hidden"
+              >
+                <img
+                  src="http://picsum.photos/id/6/200"
+                  alt="Venue Image"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4">
+                  <p
+                    class="text-white bg-purple-800 p-2 rounded-lg text-sm mb-2 absolute top-2"
+                  >
+                    blenders
+                  </p>
+
+                  <div
+                    class="text-white p-2 rounded-lg text-sm mb-2 absolute top-2 right-2 card"
+                  >
+                    <button class="theme-toggle p-2 rounded-md">
+                      <!-- Heart Filled Icon (visible initially in light mode) -->
+                      <img
+                        class="fill-icon w-6 h-6"
+                        src="./heart-fill.svg"
+                        alt="Filled Heart Icon"
+                      />
+
+                      <!-- Heart Outline Icon (initially hidden) -->
+                      <img
+                        class="outline-icon w-6 h-6 hidden"
+                        src="./heart-outline.svg"
+                        alt="Outline Heart Icon"
+                      />
+                    </button>
+                  </div>
+
+                  <h1 class="text-lg font-semibold text-gray-800 mb-1">
+                    Chhavi Hotels and Banquets
+                  </h1>
+                  <p class="text-sm text-gray-600 flex items-center">
+                    <span class="text-yellow-400 mr-1">
+                      <!-- Star SVG Icon -->
+                      <svg
+                        class="w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                        />
+                      </svg>
+                    </span>
+                    4.5 (15)
+                    <span class="mx-2">•</span>
+                    <!-- Dot in the middle -->
+                    Ar Riyadh (Al Qirawan)
+                  </p>
+                  <p class="text-sm text-gray-600 flex items-center mt-2">
+                    <span class="text-red-500 mr-1">
+                      <!-- Pin SVG Icon -->
+                      <svg
+                        class="w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 2C8.686 2 6 4.686 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.314-2.686-6-6-6zm0 8.5c-1.378 0-2.5-1.121-2.5-2.5S10.622 5.5 12 5.5s2.5 1.121 2.5 2.5-1.121 2.5-2.5 2.5z"
+                        />
+                      </svg>
+                    </span>
+                    1 promotion
+                    <span class="ml-2 text-red-500">-20%</span>
+                  </p>
+
+                  <div class="flex justify-between text-sm text-gray-600 mt-3">
+                    <div class="left">From $1,000</div>
+                    <div class="right">50 to 300 people</div>
+                  </div>
+
+                  <div class="tags flex flex-wrap mt-3">
+                    <div
+                      class="tag bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded mr-2 mb-2"
+                    >
+                      2 tea people
+                    </div>
+                    <div
+                      class="tag bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded mr-2 mb-2"
+                    >
+                      4 Rooms
+                    </div>
+                    <div
+                      class="tag bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded mb-2"
+                    >
+                      +6 more
+                    </div>
+                  </div>
+
+                  <p class="text-sm text-gray-600 flex items-center mt-4">
+                    <span class="text-green-500 mr-1">
+                      <!-- Clock SVG Icon -->
+                      <svg
+                        class="w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 1C5.935 1 1 5.935 1 12s4.935 11 11 11 11-4.935 11-11S18.065 1 12 1zm0 20c-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9-4.029 9-9 9zm1-9h-4V7h2v5h2v2z"
+                        />
+                      </svg>
+                    </span>
+                    Responds within 24 hours
+                  </p>
+                </div>
+              </div>
+              <!-- card end -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
